@@ -1,12 +1,12 @@
 import Scoreboard from './scoreboard.js';
 import Shape from './shape.js';
-import Board from './board.js';
+import Board, {BOARD_EMPTY} from './board.js';
 import config from './config.js';
 
 'use strict';
 const canvas = document.querySelector('canvas');
-canvas.width = 640;
-canvas.height = 640;
+canvas.width = config.width;
+canvas.height = config.height;
 
 const g = canvas.getContext('2d');
 
@@ -25,7 +25,6 @@ let nextShape;
 
 let keyDown = false;
 let fastDown = false;
-//let lastFrameTime = -1;
 
 addEventListener('keydown', function (event) {
     if (!keyDown) {
@@ -165,7 +164,7 @@ function drawBlocks() {
     for (let r = 0; r < nRows; r++) {
         for (let c = 0; c < nCols; c++) {
             const idx = board.grid[r][c];
-            if (idx > board.EMPTY)
+            if (idx > BOARD_EMPTY)
                 drawSquare(idx, r, c);
         }
     }

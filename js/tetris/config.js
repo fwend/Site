@@ -1,4 +1,6 @@
 export default {
+    width: 640,
+    height: 640,
     blockSize : 30,
     topMargin : 50,
     leftMargin : 20,
