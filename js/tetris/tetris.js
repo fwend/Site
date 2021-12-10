@@ -2,6 +2,7 @@ import Scoreboard from './scoreboard.js';
 import Shape from './shape.js';
 import Board, {BOARD_EMPTY} from './board.js';
 import config from './config.js';
+import trans from './lang/en.js';
 
 'use strict';
 const canvas = document.querySelector('canvas');
@@ -117,10 +118,10 @@ function drawStartScreen() {
     fillRect(config.clickRect, config.titlebgColor);
 
     g.fillStyle = config.textColor;
-    g.fillText('Tetris', config.titleX, config.titleY);
+    g.fillText(trans.title, config.titleX, config.titleY);
 
     g.font = config.smallFont;
-    g.fillText('click to start', config.clickX, config.clickY);
+    g.fillText(trans.start, config.clickX, config.clickY);
 }
 
 function fillRect(r, color) {
@@ -173,10 +174,10 @@ function drawBlocks() {
 function drawScoreboard() {
     g.fillStyle = config.textColor;
     g.font = config.smallFont;
-    g.fillText('hiscore    ' + scoreboard.getTopscore(), config.scoreX, config.scoreY);
-    g.fillText('level      ' + scoreboard.getLevel(), config.scoreX, config.scoreY + 30);
-    g.fillText('lines      ' + scoreboard.getLines(), config.scoreX, config.scoreY + 60);
-    g.fillText('score      ' + scoreboard.getScore(), config.scoreX, config.scoreY + 90);
+    g.fillText(trans.hiscore + scoreboard.getTopscore(), config.scoreX, config.scoreY);
+    g.fillText(trans.level + scoreboard.getLevel(), config.scoreX, config.scoreY + 30);
+    g.fillText(trans.lines + scoreboard.getLines(), config.scoreX, config.scoreY + 60);
+    g.fillText(trans.score + scoreboard.getScore(), config.scoreX, config.scoreY + 90);
 }
 
 function drawPreview() {
