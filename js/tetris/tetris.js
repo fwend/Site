@@ -176,6 +176,17 @@ function drawUI() {
     fillRect(outerRect, bgColor);
     fillRect(gridRect, gridColor);
 
+    // the borders of grid
+    g.lineWidth = largeStroke;
+    drawRect(gridRect, gridBorderColor);
+    drawRect(outerRect, gridBorderColor);
+
+    drawBlocks();
+    drawScoreboard();
+    drawPreview();
+}
+
+function drawBlocks() {
     // the blocks dropped in the grid
     for (let r = 0; r < nRows; r++) {
         for (let c = 0; c < nCols; c++) {
@@ -184,22 +195,18 @@ function drawUI() {
                 drawSquare(idx, r, c);
         }
     }
+}
 
-    // the borders of grid and preview panel
-    g.lineWidth = largeStroke;
-    drawRect(gridRect, gridBorderColor);
-    drawRect(previewRect, gridBorderColor);
-    drawRect(outerRect, gridBorderColor);
-
-    // scoreboard
+function drawScoreboard() {
     g.fillStyle = textColor;
     g.font = smallFont;
     g.fillText('hiscore    ' + scoreboard.getTopscore(), scoreX, scoreY);
     g.fillText('level      ' + scoreboard.getLevel(), scoreX, scoreY + 30);
     g.fillText('lines      ' + scoreboard.getLines(), scoreX, scoreY + 60);
     g.fillText('score      ' + scoreboard.getScore(), scoreX, scoreY + 90);
+}
 
-    // preview
+function drawPreview() {
     let minX = 5, minY = 5, maxX = 0, maxY = 0;
     nextShape.pos.forEach(function (p) {
         minX = Math.min(minX, p[0]);
@@ -209,6 +216,7 @@ function drawUI() {
     });
     const cx = previewCenterX - ((minX + maxX + 1) / 2.0 * blockSize);
     const cy = previewCenterY - ((minY + maxY + 1) / 2.0 * blockSize);
+    drawRect(previewRect, gridBorderColor);
 
     g.translate(cx, cy);
     nextShape.shape.forEach(function (p) {
