@@ -29,6 +29,7 @@ body {
 }
 
 .mosaic_heading {
+    margin-top: 3rem;
     margin-left: 190px;
     font-style: italic;
 }
@@ -55,7 +56,12 @@ body {
     border-bottom: 3px solid transparent;
 }
 
-.header a:link, a:visited, a:hover, a:active {
+.header .logo {
+    margin-right: auto;
+    margin-left: 170px;
+}
+
+.header a:link, a:visited, a:hover, a:active, .logo {
     color: darkgrey;
 }
 
@@ -84,4 +90,12 @@ body {
 
 canvas {
     border: 1px solid red;
+}
+
+.content {
+    margin: 20px 170px;
+}
+
+.content h1 {
+    margin-bottom: 1rem;
 }
