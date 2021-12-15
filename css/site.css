@@ -1,23 +1,87 @@
 @import "reset.css";
 
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    background-color: lightsteelblue;
+}
+
 .container {
-    background-color: bisque;
+    background-color: white;
     margin: auto;
     max-width: 1215px;
     min-height: 100vh;
+    position: relative;
 }
 
 .mosaic {
     display: grid;
-    grid-gap: 25px;
-    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
     padding: 20px;
-    margin: auto;
-    background-color: #ffff99;
+    margin: 20px 170px;
+    /*border: 1px solid lightgray;*/
+}
+
+.mosaic_heading {
+    margin-left: 190px;
+    font-style: italic;
 }
 
 .mosaic img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border: 1px solid darkgrey;
+}
+
+.header {
+    font-size: 2rem;
+    height: 7rem;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-right: 170px;
+}
+
+.header a {
+    text-decoration: none;
+    margin-right: 2rem;
+    border-bottom: 3px solid transparent;
+}
+
+.header a:link, a:visited, a:hover, a:active {
+    color: darkgrey;
+}
+
+.header a.active {
+    border-bottom: 3px solid steelblue;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    color:white;
+    font-size: 1rem;
+    min-height: 10rem;
+    background-color: steelblue;
+    padding-top: 95px;
+}
+
+.footer img {
+    width: 125px;
+    height: 125px;
+    position: absolute;
+    top: -50px;
+    left: 190px;
+    border: 5px solid white;
+}
+
+canvas {
+    border: 1px solid red;
 }

@@ -2,8 +2,8 @@
     "use strict";
 
     const canvas = document.querySelector("canvas");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.width = 700;
+    canvas.height = 700;
 
     const g = canvas.getContext("2d");
 

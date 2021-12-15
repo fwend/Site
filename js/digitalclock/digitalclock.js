@@ -1,8 +1,9 @@
 import config from './config.js'
+import Led from './led.js'
 
 const canvas = document.querySelector('canvas');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = 1100;
+canvas.height = 700;
 
 const g = canvas.getContext('2d');
 
@@ -19,19 +20,6 @@ const vertices = [
         [0, 0], [-1, 1], [-1, 7], [0, 8], [1, 7], [1, 1]
     ]
 ];
-
-function Led(x, y, idx, ox, oy) {
-    // starting points in scalable units that will be multiplied by 'size' later
-    this.x = x;
-    this.y = y;
-
-    // horizontal or vertical layout
-    this.idx = idx;
-
-    // pixel values to create small gaps between the leds
-    this.offset_x = ox;
-    this.offset_y = oy;
-}
 
 const leds = [];
 leds.push(new Led(0, 0, 0, 0, -1));
