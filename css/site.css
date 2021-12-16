@@ -1,5 +1,10 @@
 @import "reset.css";
 
+:root {
+    --margin: 14%;
+    --footer-clearance: 100px;
+}
+
 html {
     font-size: 62.5%;
 }
@@ -12,11 +17,13 @@ body {
 }
 
 .container {
-    background-color: white;
+    display: flex;
+    flex-direction: column;
     margin: auto;
     max-width: 1215px;
+    min-width: 250px;
     min-height: 100vh;
-    position: relative;
+    background-color: white;
 }
 
 .mosaic {
@@ -24,13 +31,22 @@ body {
     grid-gap: 30px;
     grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
     padding: 20px;
-    margin: 20px 170px;
+    margin: 20px var(--margin);
     /*border: 1px solid lightgray;*/
+}
+
+.container nav {
+    padding-bottom: var(--footer-clearance);
+    background-color: white;
+}
+
+.intro {
+    margin: 20px calc(var(--margin) + 20px);
 }
 
 .mosaic_heading {
     margin-top: 3rem;
-    margin-left: 190px;
+    margin-left: calc(var(--margin) + 20px);
     font-style: italic;
 }
 
@@ -42,12 +58,12 @@ body {
 }
 
 .header {
-    font-size: 2rem;
-    height: 7rem;
     display: flex;
     justify-content: end;
     align-items: center;
-    margin-right: 170px;
+    font-size: clamp(1rem, 2.5vw, 2rem);
+    height: 7rem;
+    margin-right: var(--margin);
 }
 
 .header a {
@@ -58,7 +74,7 @@ body {
 
 .header .logo {
     margin-right: auto;
-    margin-left: 170px;
+    margin-left: var(--margin);
 }
 
 .header a:link, a:visited, a:hover, a:active, .logo {
@@ -70,21 +86,21 @@ body {
 }
 
 .footer {
-    position: absolute;
-    bottom: 0;
+    position: relative;
     color:white;
     font-size: 1rem;
     min-height: 10rem;
     background-color: steelblue;
-    padding-top: 95px;
+    padding: 95px 20px 20px;
+    margin-top: auto;
 }
 
 .footer img {
-    width: 125px;
-    height: 125px;
     position: absolute;
     top: -50px;
-    left: 190px;
+    width: 125px;
+    height: 125px;
+    left: calc(var(--margin) + 20px);
     border: 5px solid white;
 }
 
@@ -93,7 +109,9 @@ canvas {
 }
 
 .content {
-    margin: 20px 170px;
+    /*border: 1px solid green;*/
+    margin: 20px var(--margin);
+    padding-bottom: var(--footer-clearance);
 }
 
 .content h1 {

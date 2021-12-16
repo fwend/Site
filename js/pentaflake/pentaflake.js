@@ -62,7 +62,7 @@
     function draw() {
         g.clearRect(0, 0, canvas.width, canvas.height);
 
-        const size = 700;
+        const size = canvas.width;
         const w = canvas.width;
         const radius = size / 2 - 2 * margin;
         const side = radius * Math.sin(Math.PI / 5) * 2;
