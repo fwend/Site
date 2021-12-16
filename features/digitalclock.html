@@ -8,12 +8,14 @@
     <link rel="stylesheet" href="../css/site.css">
     <style>
         canvas {
-            position: absolute;
-            top: 45%;
-            left: 50%;
-            width: 1100px;
-            height: 700px;
-            margin: -350px 0 0 -550px;
+            display: block;
+            height: clamp(100px, 23vw, 300px);
+            width: clamp(300px, 70vw, 900px);
+            margin-top: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 20px;
+            border: 0
         }
     </style>
 </head>
@@ -46,9 +48,9 @@
             hic ipsa laborum maiores modi mollitia nesciunt nulla quisquam reprehenderit repudiandae rerum similique
             soluta sunt velit veritatis voluptatibus! Ad animi autem culpa, dolorum ex excepturi laboriosam obcaecati
             omnis provident repudiandae ut.</p>
+        <canvas></canvas>
+        <script type="module" src="../js/digitalclock/digitalclock.js" defer></script>
     </div>
-    <canvas></canvas>
-    <script type="module" src="../js/digitalclock/digitalclock.js" defer></script>
 
     <footer class="footer">
         <img src="../img/photo.png" alt="author">

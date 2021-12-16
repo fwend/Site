@@ -2,8 +2,8 @@ import config from './config.js'
 import Led from './led.js'
 
 const canvas = document.querySelector('canvas');
-canvas.width = 1100;
-canvas.height = 700;
+canvas.width = 900;
+canvas.height = 300;
 
 const g = canvas.getContext('2d');
 

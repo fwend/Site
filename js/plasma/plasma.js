@@ -48,12 +48,6 @@ function drawPlasma(w, h) {
     g.putImageData(img, 0, 0);
 }
 
-function drawBorder() {
-    g.strokeStyle = "white";
-    g.lineWidth = 10;
-    g.strokeRect(0, 0, canvas.width, canvas.height);
-}
-
 function animate(lastFrameTime) {
     const time = new Date().getTime();
     const delay = 42;
@@ -61,7 +55,6 @@ function animate(lastFrameTime) {
     if (lastFrameTime + delay < time) {
         hueShift = (hueShift + 0.02) % 1;
         drawPlasma(canvas.width, canvas.height);
-        drawBorder();
         lastFrameTime = time;
     }
 

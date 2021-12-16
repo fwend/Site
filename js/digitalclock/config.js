@@ -1,5 +1,5 @@
 export default {
     onColor : '#00FF00',
-    offColor : '#f1fcf1',
-    size: 10
+    offColor : '#e2fae2',
+    size: 8
 };

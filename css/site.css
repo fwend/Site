@@ -1,8 +1,9 @@
 @import "reset.css";
 
 :root {
-    --margin: 14%;
+    --side-margin: 14%;
     --footer-clearance: 100px;
+    --standard-gap: 20px;
 }
 
 html {
@@ -14,6 +15,7 @@ body {
     font-weight: 400;
     line-height: 1.6;
     background-color: lightsteelblue;
+    overflow-y: scroll;
 }
 
 .container {
@@ -21,33 +23,59 @@ body {
     flex-direction: column;
     margin: auto;
     max-width: 1215px;
-    min-width: 250px;
+    min-width: 300px;
     min-height: 100vh;
     background-color: white;
 }
 
-.mosaic {
+.header {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    height: 7rem;
+    margin-right: var(--side-margin);
+}
+
+.header a {
+    text-decoration: none;
+    margin-left: 2rem;
+    border-bottom: 3px solid transparent;
+}
+
+.header .logo {
+    margin-right: auto;
+    margin-left: var(--side-margin);
+    border-bottom: 3px solid transparent;
+}
+
+.header a:link, a:visited, a:hover, a:active, .logo {
+    color: #777;
+}
+
+.header a.active {
+    border-bottom: 3px solid steelblue;
+}
+
+.content {
+    margin: var(--standard-gap) var(--side-margin);
+    padding-bottom: var(--footer-clearance);
+}
+
+.content p {
+    font-size: 1.5rem;
+    text-align: justify;
+}
+
+.content h1 {
+    margin-bottom: 1rem;
+}
+
+nav.mosaic {
     display: grid;
     grid-gap: 30px;
     grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
-    padding: 20px;
-    margin: 20px var(--margin);
-    /*border: 1px solid lightgray;*/
-}
-
-.container nav {
-    padding-bottom: var(--footer-clearance);
-    background-color: white;
-}
-
-.intro {
-    margin: 20px calc(var(--margin) + 20px);
-}
-
-.mosaic_heading {
-    margin-top: 3rem;
-    margin-left: calc(var(--margin) + 20px);
-    font-style: italic;
+    margin-top: 50px;
 }
 
 .mosaic img {
@@ -57,42 +85,15 @@ body {
     border: 1px solid darkgrey;
 }
 
-.header {
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    font-size: clamp(1rem, 2.5vw, 2rem);
-    height: 7rem;
-    margin-right: var(--margin);
-}
-
-.header a {
-    text-decoration: none;
-    margin-right: 2rem;
-    border-bottom: 3px solid transparent;
-}
-
-.header .logo {
-    margin-right: auto;
-    margin-left: var(--margin);
-}
-
-.header a:link, a:visited, a:hover, a:active, .logo {
-    color: darkgrey;
-}
-
-.header a.active {
-    border-bottom: 3px solid steelblue;
-}
-
 .footer {
     position: relative;
     color:white;
-    font-size: 1rem;
+    font-size: 1.2rem;
     min-height: 10rem;
     background-color: steelblue;
-    padding: 95px 20px 20px;
+    padding: 95px var(--standard-gap) var(--standard-gap);
     margin-top: auto;
+    text-align: justify;
 }
 
 .footer img {
@@ -100,20 +101,22 @@ body {
     top: -50px;
     width: 125px;
     height: 125px;
-    left: calc(var(--margin) + 20px);
+    left: var(--side-margin);
     border: 5px solid white;
 }
 
 canvas {
-    border: 1px solid red;
+    border: 1px solid darkgrey;
 }
 
-.content {
-    /*border: 1px solid green;*/
-    margin: 20px var(--margin);
-    padding-bottom: var(--footer-clearance);
-}
-
-.content h1 {
-    margin-bottom: 1rem;
+@media only screen and (max-width: 500px) {
+    .content p {
+        text-align: left;
+    }
+    .intro {
+        text-align: left;
+    }
+    .footer {
+        text-align: left;
+    }
 }

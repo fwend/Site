@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="../css/site.css">
     <style>
         canvas {
-            position: absolute;
-            top: 45%;
-            left: 50%;
-            width: 700px;
-            height: 500px;
-            margin: -250px 0 0 -350px;
+            display: block;
+            height: clamp(200px, 39vw, 500px);
+            width: clamp(200px, 55vw, 700px);
+            margin-top: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 3px solid steelblue;
         }
     </style>
 </head>
@@ -48,9 +49,9 @@
             hic ipsa laborum maiores modi mollitia nesciunt nulla quisquam reprehenderit repudiandae rerum similique
             soluta sunt velit veritatis voluptatibus! Ad animi autem culpa, dolorum ex excepturi laboriosam obcaecati
             omnis provident repudiandae ut.</p>
+        <canvas></canvas>
+        <script type="module" src="../js/plasma/plasma.js" defer></script>
     </div>
-    <canvas></canvas>
-    <script type="module" src="../js/plasma/plasma.js" defer></script>
 
     <footer class="footer">
         <img src="../img/photo.png" alt="author">

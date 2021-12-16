@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="../css/site.css">
     <style>
         canvas {
-            position: absolute;
-            top: 45%;
-            left: 50%;
-            width: 700px;
-            height: 700px;
-            margin: -350px 0 0 -350px;
+            display: block;
+            height: clamp(200px, 55vw, 700px);
+            width: clamp(200px, 55vw, 700px);
+            margin-top: 50px;
+            margin-left: auto;
+            margin-right: auto;
         }
     </style>
 </head>
@@ -28,7 +28,7 @@
         <a href="../about.html">about me</a>
     </header>
 
-    <div class="content">
+    <main class="content">
         <h1>Barnsley Fern</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum illo similique unde. Deserunt facere impedit
             incidunt iste minima necessitatibus quis tempore ullam velit, voluptates. Accusamus corporis et ex fugit
@@ -51,7 +51,7 @@
 
         <canvas></canvas>
         <script src="../js/barnsleyfern/barnsleyfern.js" defer></script>
-    </div>
+    </main>
 
     <footer class="footer">
         <img src="../img/photo.png" alt="author">

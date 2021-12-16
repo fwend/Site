@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="../css/site.css">
     <style>
         canvas {
-            position: absolute;
-            top: 45%;
-            left: 50%;
-            width: 640px;
-            height: 640px;
-            margin: -320px 0 0 -320px;
+            display: block;
+            height: clamp(200px, 50vw, 640px);
+            width: clamp(200px, 50vw, 640px);
+            margin-top: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 0
         }
     </style>
 </head>
@@ -45,10 +46,10 @@
             hic ipsa laborum maiores modi mollitia nesciunt nulla quisquam reprehenderit repudiandae rerum similique
             soluta sunt velit veritatis voluptatibus! Ad animi autem culpa, dolorum ex excepturi laboriosam obcaecati
             omnis provident repudiandae ut.</p>
+        <canvas></canvas>
+        <script type="module" src="../js/tetris/tetris.js" defer></script>
     </div>
 
-    <canvas></canvas>
-    <script type="module" src="../js/tetris/tetris.js" defer></script>
 
     <footer class="footer">
         <img src="../img/photo.png" alt="author">

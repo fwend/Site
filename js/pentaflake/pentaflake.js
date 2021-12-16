@@ -33,7 +33,7 @@
                 angle += degrees072;
             }
 
-            g.fillStyle = "#3498DB";
+            g.fillStyle = "#DC143C";
             g.closePath();
             g.fill();
         } else {
@@ -82,5 +82,5 @@
 
     setInterval(function() {
         draw();
-    }, 3000);
+    }, 2000);
 })();
