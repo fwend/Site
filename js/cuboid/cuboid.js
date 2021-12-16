@@ -79,3 +79,8 @@ function drawCuboid() {
 
 scale(80, 120, 160);
 rotateCuboid(Math.PI / 5, Math.PI / 9);
+
+setInterval(function() {
+    rotateCuboid(Math.PI / 180, 0);
+    drawCuboid();
+}, 17);
