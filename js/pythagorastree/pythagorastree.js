@@ -2,7 +2,7 @@ import {HSVtoRGB, toRgbString} from "../_shared/hsv_to_rgb.js";
 
 const canvas = document.querySelector('canvas');
 canvas.width = 832;
-canvas.height = 832;
+canvas.height = 500;
 
 const g = canvas.getContext('2d');
 
@@ -47,12 +47,19 @@ function drawTree(x1, y1, x2, y2, depth) {
     g.strokeStyle = "lightGray";
     g.stroke();
 
-    drawTree(x4, y4, x5, y5, depth + 1);
-    drawTree(x5, y5, x3, y3, depth + 1);
+    setTimeout(function() {
+        drawTree(x4, y4, x5, y5, depth + 1);
+        drawTree(x5, y5, x3, y3, depth + 1);
+    }, 500);
 }
 
 function draw() {
     g.clearRect(0, 0, canvas.width, canvas.height);
-    drawTree(357, 650, 487, 650, 0);
+    drawTree(357, 500, 487, 500, 0);
 }
+
 draw();
+
+setInterval(function () {
+    draw();
+}, 10000);
