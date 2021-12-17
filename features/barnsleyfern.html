@@ -13,6 +13,7 @@
             height: clamp(200px, 55vw, 700px);
             width: clamp(200px, 55vw, 700px);
             margin: 50px auto 0;
+            border: 0
         }
     </style>
 </head>
@@ -30,24 +31,17 @@
 
     <main class="content">
         <h1>Barnsley Fern</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum illo similique unde. Deserunt facere impedit
-            incidunt iste minima necessitatibus quis tempore ullam velit, voluptates. Accusamus corporis et ex fugit
-            libero omnis quasi quis quos. A accusantium aliquam at consequatur culpa cupiditate deleniti dicta
-            dignissimos dolores ducimus fugit id illo illum itaque minus mollitia natus neque optio quaerat quasi
-            quisquam, quod saepe sed sequi tempora totam ut. A accusantium beatae commodi deleniti dolores, dolorum
-            earum, facere ipsum magni nihil non optio pariatur quo tempora voluptas? Dolore est id necessitatibus
-            voluptatum. Consectetur corporis earum esse fugit, minima officiis tenetur ut voluptates. Accusamus aliquam
-            aliquid aperiam aspernatur autem beatae consectetur deserunt dolore dolorum ducimus eligendi est excepturi,
-            facere fugiat id in ipsa iure iusto labore laboriosam maiores modi molestiae, nobis non nulla obcaecati
-            omnis qui quia quo rem repellat reprehenderit sapiente sint suscipit tempore vel vitae? Ad assumenda at
-            autem, consectetur dicta distinctio dolorem dolores ducimus eaque eius eos est hic illo illum incidunt
-            inventore, laudantium maiores maxime modi nam neque numquam odit officiis qui quo recusandae sapiente sed
-            similique sint sit, tempora tenetur veritatis vitae. Ab, amet architecto aut beatae consectetur dolorum eius
-            est et inventore mollitia nesciunt officiis perferendis praesentium quas quasi quibusdam suscipit unde
-            veniam vero voluptatibus? A alias consequatur corporis dicta dolor ducimus eligendi enim, et eum excepturi,
-            hic ipsa laborum maiores modi mollitia nesciunt nulla quisquam reprehenderit repudiandae rerum similique
-            soluta sunt velit veritatis voluptatibus! Ad animi autem culpa, dolorum ex excepturi laboriosam obcaecati
-            omnis provident repudiandae ut.</p>
+        <p>The Barnsley fern is a fractal named after the British mathematician <i>Michael Barnsley</i>. It shows
+            how an iterated function system (IFS) can create a fractal, and is an example of how mathematics can
+            simulate certain self-similar forms found in nature.</p>
+
+        <p>The Barnsley Fern resembles an actual existing fern.</p>
+
+        <p>The algorithm works by applying 4 different transformations to the plotted points, each of which is used a
+            certain percentage of the time. The first transformation, for instance, draws the stem, while subsequent
+            transformations draw smaller copies of the stem and the bottom fronds in different orientations.<p>
+
+        <p>I can't say I understand the maths, but the result is stunning.</p>
 
         <canvas></canvas>
         <script src="../js/barnsleyfern/barnsleyfern.js" defer></script>

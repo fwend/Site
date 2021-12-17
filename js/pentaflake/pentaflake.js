@@ -1,4 +1,4 @@
-(function() {
+(function () {
     "use strict";
 
     const canvas = document.querySelector("canvas");
@@ -15,7 +15,9 @@
        with a base angle of 72 degrees. */
     const scaleFactor = 1 / (2 + Math.cos(degrees072) * 2);
 
+    const colors = ["Steelblue", "Tomato", "LimeGreen", "Orange", "LightSkyBlue", "Orchid", "Gold"];
     const margin = 20;
+    let colorIndex = 0;
     let limit = 0;
 
     function drawPentagon(x, y, side, depth) {
@@ -33,7 +35,7 @@
                 angle += degrees072;
             }
 
-            g.fillStyle = "#DC143C";
+            g.fillStyle = colors[colorIndex % colors.length];
             g.closePath();
             g.fill();
         } else {
@@ -75,12 +77,15 @@
         );
 
         limit++;
-        if (limit >= 6) limit = 0;
+        if (limit >= 6) {
+            limit = 0;
+            colorIndex++;
+        }
     }
 
     draw();
 
-    setInterval(function() {
+    setInterval(function () {
         draw();
     }, 2000);
 })();

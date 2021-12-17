@@ -5,8 +5,8 @@ canvas.height = 700;
 const g = canvas.getContext("2d");
 g.fillStyle = "#6AA84F";
 
-const fern = [];
 const limit = 400000;
+const fern = [];
 let pixelCount = 0;
 
 function createFern(leftMargin, topMargin, w, h) {
@@ -40,17 +40,24 @@ function createFern(leftMargin, topMargin, w, h) {
 }
 
 function animate() {
-    let requestID = requestAnimationFrame(animate);
-
-    if (pixelCount < limit) {
-        for (let i = pixelCount; i < 500 + pixelCount; i++) {
-            g.fillRect(fern[i][0], fern[i][1], 1, 1);
+    setTimeout(function() {
+        let requestID = requestAnimationFrame(animate);
+        if (pixelCount < limit) {
+            for (let i = pixelCount; i < 500 + pixelCount; i++) {
+                g.fillRect(fern[i][0], fern[i][1], 1, 1);
+            }
+            pixelCount += 500;
+        } else {
+            cancelAnimationFrame(requestID);
         }
-        pixelCount += 500;
-    } else {
-        cancelAnimationFrame(requestID);
-    }
+    }, 70);
 }
 
 createFern((canvas.width - 600) / 2, (canvas.height - 600) / 2, 600, 600);
 animate();
+
+setInterval(function () {
+    g.clearRect(0, 0, canvas.width, canvas.height);
+    pixelCount = 0;
+    animate();
+}, 20000);
