@@ -30,24 +30,35 @@
 
     <main class="content">
         <h1>Polyspiral</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum illo similique unde. Deserunt facere impedit
-            incidunt iste minima necessitatibus quis tempore ullam velit, voluptates. Accusamus corporis et ex fugit
-            libero omnis quasi quis quos. A accusantium aliquam at consequatur culpa cupiditate deleniti dicta
-            dignissimos dolores ducimus fugit id illo illum itaque minus mollitia natus neque optio quaerat quasi
-            quisquam, quod saepe sed sequi tempora totam ut. A accusantium beatae commodi deleniti dolores, dolorum
-            earum, facere ipsum magni nihil non optio pariatur quo tempora voluptas? Dolore est id necessitatibus
-            voluptatum. Consectetur corporis earum esse fugit, minima officiis tenetur ut voluptates. Accusamus aliquam
-            aliquid aperiam aspernatur autem beatae consectetur deserunt dolore dolorum ducimus eligendi est excepturi,
-            facere fugiat id in ipsa iure iusto labore laboriosam maiores modi molestiae, nobis non nulla obcaecati
-            omnis qui quia quo rem repellat reprehenderit sapiente sint suscipit tempore vel vitae? Ad assumenda at
-            autem, consectetur dicta distinctio dolorem dolores ducimus eaque eius eos est hic illo illum incidunt
-            inventore, laudantium maiores maxime modi nam neque numquam odit officiis qui quo recusandae sapiente sed
-            similique sint sit, tempora tenetur veritatis vitae. Ab, amet architecto aut beatae consectetur dolorum eius
-            est et inventore mollitia nesciunt officiis perferendis praesentium quas quasi quibusdam suscipit unde
-            veniam vero voluptatibus? A alias consequatur corporis dicta dolor ducimus eligendi enim, et eum excepturi,
-            hic ipsa laborum maiores modi mollitia nesciunt nulla quisquam reprehenderit repudiandae rerum similique
-            soluta sunt velit veritatis voluptatibus! Ad animi autem culpa, dolorum ex excepturi laboriosam obcaecati
-            omnis provident repudiandae ut.</p>
+        <p>A <a href="https://rosettacode.org/wiki/Polyspiral">polyspiral</a> is a
+            spiral made of multiple line segments, whereby each segment is larger (or smaller) than the previous one by
+            a given amount. Each segment also changes direction at a given angle.</p>
+
+        <p>If you see the effect, you'd think that there's a lot of code involved, but it's actually a very simple
+            loop. In pseudo code, from the Rosetta Code task I created, a few years back:</p>
+
+        <code>
+     set incr to 0.0
+
+     // animation loop
+     WHILE true
+
+     incr = (incr + 0.05) MOD 360
+     x = width / 2
+     y = height / 2
+     length = 5
+     angle = incr
+
+     // spiral loop
+     FOR 1 TO 150
+     drawline
+     change direction by angle
+     length = length + 3
+     angle = (angle + incr) MOD 360
+     ENDFOR
+        </code>
+
+        <p>It takes a while to get started, but it's quite spectacular.</p>
         <canvas></canvas>
         <script type="module" src="../js/polyspiral/polyspiral.js" defer></script>
     </main>
