@@ -1,4 +1,4 @@
-import {HSVtoRGB} from "../shared/hsv_to_rgb.js";
+import {HSVtoRGB} from "../_shared/hsv_to_rgb.js";
 
 'use strict';
 const canvas = document.querySelector('canvas');

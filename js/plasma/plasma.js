@@ -1,4 +1,4 @@
-import {HSVtoRGB} from "../shared/hsv_to_rgb.js";
+import {HSVtoRGB} from "../_shared/hsv_to_rgb.js";
 
 const canvas = document.querySelector('canvas');
 canvas.width = 700;
