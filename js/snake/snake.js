@@ -63,11 +63,8 @@ addEventListener('keydown', function (event) {
 });
 
 addEventListener('click', function () {
-    console.log(0);
-
     if (isGameOver) {
         startNewGame();
-        console.log(1);
     }
 });
 
@@ -159,11 +156,11 @@ function draw() {
 }
 
 function drawStartScreen() {
-    g.fillStyle = "blue";
+    g.fillStyle = config.snakeColor;
     g.font = config.mainFont;
     g.fillText("Snake", 200, 200);
 
-    g.fillStyle = "orange";
+    g.fillStyle = config.headColor;
     g.font = config.smallFont;
     g.fillText("(click to start)", 330, 400);
 }
@@ -174,25 +171,25 @@ function drawSnakepit() {
 }
 
 function drawSnake() {
-    g.fillStyle = "blue";
+    g.fillStyle = config.snakeColor;
     snake.body.forEach(function (p) {
         g.fillRect(p.x * 10, p.y * 10, 10, 10);
     });
 
-    g.fillStyle = snake.energy < 500 ? "red" : "orange";
+    g.fillStyle = snake.energy < 500 ? config.warnColor : config.headColor;
     const head = snake.body[0];
     g.fillRect(head.x * 10, head.y * 10, 10, 10);
 }
 
 function drawTreats() {
-    g.fillStyle = "green";
+    g.fillStyle = config.treatColor;
     treats.forEach(function (t) {
         g.fillRect(t.x * 10, t.y * 10, 10, 10);
     });
 }
 
 function drawScore() {
-    g.fillStyle = "black";
+    g.fillStyle = config.scoreColor;
     g.font = config.smallFont;
 
     g.fillText("hiscore  " + hiscore, 30, 570);
@@ -201,18 +198,13 @@ function drawScore() {
 }
 
 function drawGrid() {
-    g.fillStyle = "purple";
+    g.fillStyle = config.wallColor;
     for (let r = 0; r < nRows; r++) {
         for (let c = 0; c < nCols; c++) {
             if (grid[r][c] === WALL)
                 g.fillRect(c * 10, r * 10, 10, 10);
         }
     }
-}
-
-function fillRect(r, color) {
-    g.fillStyle = color;
-    g.fillRect(r.x, r.y, r.w, r.h);
 }
 
 function drawRect(r, color) {
@@ -249,7 +241,6 @@ function animate(lastFrameTime) {
 function gameOver(id) {
     isGameOver = true;
     cancelAnimationFrame(id);
-    console.log("over");
 }
 
 function initGrid() {
