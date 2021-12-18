@@ -1,10 +1,10 @@
 'use strict';
 const canvas = document.querySelector('canvas');
 canvas.width = 800;
-canvas.height = 600;
+canvas.height = 800;
 
 const g = canvas.getContext('2d');
-
+const colors = ["Steelblue", "Tomato", "LimeGreen", "Orange", "LightSkyBlue", "Orchid", "Gold", "#CCCCFF", "#9FE2BF"];
 const gravity = 1;
 let balls = [];
 
@@ -67,7 +67,7 @@ function init() {
     for (let i = 0; i < 9; i++) {
         const x = i * dist + 75;
         const r = Math.floor(Math.random() * 50 + 20);
-        balls.push(new Ball(x, 50, r, 2, "white"));
+        balls.push(new Ball(x, 50, r, 2, colors[i]));
     }
 }
 
