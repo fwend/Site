@@ -8,7 +8,7 @@ canvas.height = 800;
 const g = canvas.getContext('2d');
 
 const maxIter = 300;
-const zoom = 1;
+const zoom = 1.0;
 let cY, cX;
 
 function drawJuliaSet() {
