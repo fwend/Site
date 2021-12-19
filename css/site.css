@@ -38,7 +38,8 @@ p {
     align-items: center;
     font-size: clamp(1.4rem, 2.5vw, 2rem);
     height: 7rem;
-    margin-right: var(--side-margin);
+    background-color: steelblue;
+    margin-bottom: calc(var(--standard-gap) * 2)
 }
 
 .header a {
@@ -53,18 +54,22 @@ p {
     border-bottom: 3px solid transparent;
 }
 
+.header nav {
+    margin-right: var(--side-margin);
+}
+
 a:link, a:visited, a:hover, a:active {
     color: darkorange;
     font-weight: bold;
 }
 
 .header a:link, .header a:visited, .header a:hover, .header a:active, .logo {
-    color: #777;
+    color: white;
     font-weight: normal;
 }
 
 .header a.active {
-    border-bottom: 3px solid steelblue;
+    border-bottom: 3px solid white;
 }
 
 .content {
