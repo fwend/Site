@@ -106,18 +106,22 @@ nav.mosaic {
     font-size: 1.2rem;
     min-height: 10rem;
     background-color: steelblue;
-    padding: 95px var(--standard-gap) var(--standard-gap);
     margin-top: auto;
     text-align: justify;
 }
 
-.footer img {
+.footer img#portrait {
     position: absolute;
     top: -50px;
     width: 125px;
     height: 125px;
     left: var(--side-margin);
     border: 5px solid white;
+}
+
+.footer .icons {
+    text-align: right;
+    height: 75px;
 }
 
 canvas {
