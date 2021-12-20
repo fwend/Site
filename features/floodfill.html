@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Fwend.nl - Barnsley Fern</title>
+    <title>Fwend.nl - Floodfill</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
@@ -12,6 +12,8 @@
             display: block;
             height: clamp(200px, 55vw, 700px);
             width: clamp(200px, 55vw, 700px);
+            /*width: 100%;*/
+            /*object-fit: contain;            */
             margin: 50px auto 0;
             border: 0
         }
@@ -30,24 +32,13 @@
     </header>
 
     <main class="content">
-        <h1>Barnsley Fern</h1>
-        <p>The Barnsley fern is a fractal named after the British mathematician <i>Michael Barnsley</i>. It shows
-            how an iterated function system (IFS) can create a fractal, and is an example of how mathematics can
-            simulate certain self-similar forms found in nature.</p>
-
-        <p>The Barnsley Fern resembles an actual existing fern.</p>
-
-        <p>The algorithm works by applying 4 different transformations to the plotted points, each of which is used a
-            certain percentage of the time. The first transformation, for instance, draws the stem, while subsequent
-            transformations draw smaller copies of the stem and the bottom fronds in different orientations.<p>
-
-        <p>I can't say I understand the maths, but the result is stunning.</p>
+        <h1>Floodfill</h1>
         
         <p><a href="https://github.com/fwend/Site/blob/master/js/barnsleyfern/barnsleyfern.js"
               target="_blank">View code on Github</a></p>
 
         <canvas></canvas>
-        <script src="../js/barnsleyfern/barnsleyfern.js" defer></script>
+        <script type="module" src="../js/floodfill/floodfill.js" defer></script>
     </main>
 
     <footer class="footer">

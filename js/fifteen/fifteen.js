@@ -20,8 +20,8 @@ g.font = '20px sans-serif';
 
 canvas.addEventListener('mousedown', function (event) {
     const rect = canvas.getBoundingClientRect();
-    const ex = event.clientX - rect.left;
-    const ey = event.clientY - rect.top;
+    const ex = Math.floor(event.clientX - rect.left);
+    const ey = Math.floor(event.clientY - rect.top);
 
     if (gameOver) {
         newGame();
