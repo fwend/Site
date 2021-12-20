@@ -120,12 +120,6 @@ function drawColorMenu() {
     }
 }
 
-function draw() {
-    g.clearRect(0, 0, canvas.width, canvas.height);
-    createCanvas();
-    drawColorMenu();
-}
-
 function createColorMenu() {
     const colorboxes = [];
     const colors = [
@@ -141,4 +135,10 @@ function createColorMenu() {
     return colorboxes;
 }
 
-draw();
+function setup() {
+    g.clearRect(0, 0, canvas.width, canvas.height);
+    createCanvas();
+    drawColorMenu();
+}
+
+setup();
