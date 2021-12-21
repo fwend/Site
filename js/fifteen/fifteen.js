@@ -20,8 +20,8 @@ g.font = '20px sans-serif';
 
 canvas.addEventListener('mousedown', function (event) {
     const rect = canvas.getBoundingClientRect();
-    const ex = Math.floor(event.clientX - rect.left);
-    const ey = Math.floor(event.clientY - rect.top);
+    const ex = Math.floor(event.offsetX);
+    const ey = Math.floor(event.offsetY);
 
     if (gameOver) {
         newGame();
@@ -63,14 +63,14 @@ canvas.addEventListener('mousedown', function (event) {
 
 function newGame() {
     do {
-        reset();
+        init();
         shuffle();
     } while (!isSolvable());
     gameOver = false;
     drawGrid();
 }
 
-function reset() {
+function init() {
     for (let i = 0; i < tiles.length; i++) {
         tiles[i] = (i + 1) % tiles.length;
     }
@@ -159,6 +159,6 @@ function drawTile(sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight) {
 }
 
 image.onload = function () {
-    reset();
+    init();
     drawGrid();
 }

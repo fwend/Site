@@ -12,9 +12,8 @@ const colorboxes = createColorMenu();
 let selectedColor = 0xff00ffff; //rgba
 
 canvas.addEventListener('mousedown', function (event) {
-    const rect = canvas.getBoundingClientRect();
-    const ex = Math.floor(event.clientX - rect.left);
-    const ey = Math.floor(event.clientY - rect.top);
+    const ex = Math.floor(event.offsetX);
+    const ey = Math.floor(event.offsetY );
     if (ex >= 0 && ey >= 0 && ex < fillAreaWidth && ey < fillAreaHeight) {
         floodFill(ex, ey, selectedColor)
     } else {
