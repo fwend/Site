@@ -32,8 +32,8 @@ canvas.addEventListener('mousedown', function (event) {
             return;
         }
 
-        const c1 = Math.floor(ex / tileSize);
-        const r1 = Math.floor(ey / tileSize);
+        const c1 = Math.floor(ex / (rect.width / side));
+        const r1 = Math.floor(ey / (rect.width / side));
         const c2 = blankPos % side;
         const r2 = Math.floor(blankPos / side);
 
