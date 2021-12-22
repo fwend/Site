@@ -134,6 +134,19 @@ code {
     white-space: pre-wrap;
     background-color: Gainsboro;
     border-radius: 5px;
+    padding-left: 10px;
+}
+
+table.wolfram {
+    border: 1px solid lightGray;
+    border-collapse: collapse;
+    width: 50%;
+    font-size: 1.5rem;
+}
+
+table.wolfram td {
+    border: 1px solid lightGray;
+    text-align: center;
 }
 
 @media only screen and (max-width: 500px) {

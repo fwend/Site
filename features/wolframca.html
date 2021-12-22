@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Fwend.nl - Floodfill</title>
+    <title>Fwend.nl - Wolfram CA</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
@@ -10,10 +10,9 @@
     <style>
         canvas {
             display: block;
-            height: clamp(200px, 55vw, 700px);
+            height: clamp(200px, 27vw, 350px);
             width: clamp(200px, 55vw, 700px);
             margin: 50px auto 0;
-            border: 0
         }
     </style>
 </head>
@@ -30,13 +29,49 @@
     </header>
 
     <main class="content">
-        <h1>Floodfill</h1>
-        
+        <h1>Wolfram CA</h1>
+        <p><a href="https://natureofcode.com/book/chapter-7-cellular-automata/">
+            A cellular automaton</a> is a system of cells that live on a grid, have a binary state (on or off),
+            and a neighborhood.
+        </p>
+        <p>Each row of the grid represents a new generation. The new generation is created by taking a cell and its two
+            neighbors and from its pattern, determine the state of the cell directly underneath. Since we have 3 binary
+            states, the total number of neighborhood patterns is 8.</p>
+        <code>000, 001, 010, 011, 100, 101, 110, 111</code>
+        <p>A <i>rule</i> determines which new state each pattern corresponds to. This rule is an eight bits number.
+            Each bit of the number corresponds to one of the listed patterns. The number 90 for instance has the
+            following bitpattern:</p>
+        <code>01011010</code>
+        <p>If we map the patterns to the corresponding bits of the <i>rule</i>, we know what transforms to make.</p>
+        <table class="wolfram">
+            <tr>
+                <td>000</td>
+                <td>001</td>
+                <td>010</td>
+                <td>011</td>
+                <td>100</td>
+                <td>101</td>
+                <td>110</td>
+                <td>111</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>1</td>
+                <td>0</td>
+                <td>1</td>
+                <td>1</td>
+                <td>0</td>
+                <td>1</td>
+                <td>0</td>
+            </tr>
+        </table>
+        <p>Using 8 bits, we can create 256 rules. Not all of them will produce an interesting result,
+            we're showing only a selection.</p>
         <p><a href="https://github.com/fwend/Site/blob/master/js/barnsleyfern/barnsleyfern.js"
               target="_blank">View code on Github</a></p>
 
         <canvas></canvas>
-        <script type="module" src="../js/floodfill/floodfill.js" defer></script>
+        <script type="module" src="../js/wolframca/wolframca.js" defer></script>
     </main>
 
     <footer class="footer">
