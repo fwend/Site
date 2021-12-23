@@ -133,7 +133,7 @@ nav.mosaic {
 }
 
 .footer .colophon .location {
-    font-size: 1.2rem;
+    font-size: 60%;
 }
 
 .footer .colophon img {
@@ -189,5 +189,13 @@ table.wolfram td {
     }
     .footer {
         text-align: left;
+    }
+    .footer .colophon {
+        font-size: 1.5rem;
+    }
+    .footer .icons img {
+        width: 16px;
+        height: 16px;
+        margin: 10px 5px 0;
     }
 }
