@@ -122,6 +122,13 @@ nav.mosaic {
 .footer .icons {
     text-align: right;
     height: 75px;
+    padding-right: 20px;
+}
+
+.footer .icons img {
+    width: 32px;
+    height: 32px;
+    margin: 15px 5px 0;
 }
 
 canvas {
