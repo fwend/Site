@@ -4,6 +4,7 @@
     --side-margin: 14%;
     --footer-clearance: 100px;
     --standard-gap: 20px;
+    --portrait-size: clamp(100px, 10vw, 125px);
 }
 
 html {
@@ -102,21 +103,44 @@ nav.mosaic {
 
 .footer {
     position: relative;
-    color:white;
+    color: white;
     font-size: 1.2rem;
-    min-height: 10rem;
+    min-height: 12rem;
     background-color: steelblue;
     margin-top: auto;
-    text-align: justify;
+    display: flex;
+    justify-content: space-between;
 }
 
 .footer img#portrait {
     position: absolute;
     top: -50px;
-    width: 125px;
-    height: 125px;
+    width: var(--portrait-size);
+    height: var(--portrait-size);
     left: var(--side-margin);
     border: 5px solid white;
+}
+
+.footer .colophon {
+    height: 75px;
+    font-size: 2rem;
+    margin-left: calc(var(--side-margin) + var(--portrait-size) + var(--standard-gap));
+    padding-top: 10px;
+}
+
+.footer .colophon a {
+    display: block;
+}
+
+.footer .colophon .location {
+    font-size: 1.2rem;
+}
+
+.footer .colophon img {
+    width: 16px;
+    height: 16px;
+    margin: 5px 5px 5px 0;
+    vertical-align:middle;
 }
 
 .footer .icons {
