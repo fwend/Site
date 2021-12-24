@@ -21,8 +21,8 @@ function createPlasma(w, h) {
             value += Math.sin(y / 8.0);
             value += Math.sin((x + y) / 16.0);
             value += Math.sin(Math.sqrt(x * x + y * y) / 8.0);
-            value += 4; // shift range from -4 .. 4 to 0 .. 8
-            value /= 8; // bring range down to 0 .. 1
+            value += 4; // shift math from -4 .. 4 to 0 .. 8
+            value /= 8; // bring math down to 0 .. 1
 
             buffer[y][x] = value;
         }
