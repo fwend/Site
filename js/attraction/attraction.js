@@ -1,6 +1,7 @@
 import Attractor from "./attractor.js";
 import Mover from "./mover.js";
 import {randomInt} from "../_shared/math.js";
+import {intToHexString} from "../_shared/color.js";
 
 const canvas = document.querySelector('canvas');
 canvas.width = 640;
@@ -12,7 +13,7 @@ const w = canvas.width;
 const h = canvas.height;
 const movers = initMovers(10);
 const attractor = new Attractor(w / 2, h / 2, 0, 0, 20, 1);
-const color1 = '#' + (Number(randomInt(0x707070) + 0x707070).toString(16)).padStart(8, '0');
+const color1 = intToHexString(randomInt(0x707070ff, 0x707070ff));
 const color2 = brighter(color1, 20);
 
 function initMovers(num) {

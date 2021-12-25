@@ -1,4 +1,5 @@
 /* copied from stackoverflow */
+
 export function HSVtoRGB(h, s, v) {
     let r, g, b, i, f, p, q, t;
 
@@ -27,4 +28,8 @@ export function toRgbString(object) {
         + object.r + ","
         + object.g + ","
         + object.b + ")";
+}
+
+export function intToHexString(val) {
+    return '#' + (Number(val).toString(16)).padStart(8, '0');
 }

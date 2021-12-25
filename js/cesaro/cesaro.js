@@ -1,5 +1,5 @@
 import {range, sum} from "../_shared/math.js";
-import {HSVtoRGB, toRgbString} from "../_shared/hsv_to_rgb.js";
+import {HSVtoRGB, toRgbString} from "../_shared/color.js";
 
 const canvas = document.querySelector('canvas');
 canvas.width = 660;

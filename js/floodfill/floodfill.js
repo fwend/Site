@@ -1,4 +1,5 @@
 import Colorbox from "./colorbox.js";
+import {intToHexString} from "../_shared/color.js";
 
 const canvas = document.querySelector('canvas');
 canvas.width = 700;
@@ -112,7 +113,7 @@ function drawColorMenu() {
             g.fillStyle = 'black';
             g.fillRect(box.x - 2, box.y - 2, box.w + 4, box.h + 4);
         }
-        g.fillStyle = '#' + (Number(box.color).toString(16)).padStart(8, '0');
+        g.fillStyle = intToHexString(box.color);
         g.fillRect(box.x, box.y, box.w, box.h);
         g.strokeStyle = 'black';
         g.strokeRect(box.x, box.y, box.w, box.h);
