@@ -61,7 +61,7 @@ function drawCuboid() {
 
     g.clearRect(0, 0, canvas.width, canvas.height);
     g.translate(canvas.width / 2, canvas.height / 2);
-    g.strokeStyle = '#000';
+    g.strokeStyle = 'DarkRed';
     g.beginPath();
 
     edges.forEach(function (edge) {

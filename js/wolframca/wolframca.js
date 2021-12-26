@@ -22,7 +22,7 @@ function applyRules(lhs, mid, rhs) {
 
 function drawCA() {
     g.clearRect(0, 0, canvas.width, canvas.height);
-    g.fillStyle = 'black';
+    g.fillStyle = "RebeccaPurple";
     for (let r = 0; r < cells.length - 1; r++) {
         for (let c = 1; c < cells[r].length - 1; c++) {
             const lhs = cells[r][c - 1];
