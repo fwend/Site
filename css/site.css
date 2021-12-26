@@ -101,6 +101,11 @@ nav.mosaic {
     border: 1px solid darkgrey;
 }
 
+.mosaic figcaption {
+    text-align: center;
+    font-weight: 600;
+}
+
 .footer {
     position: relative;
     color: white;
