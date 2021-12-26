@@ -6,6 +6,7 @@ canvas.width = 700;
 canvas.height = 700;
 
 const g = canvas.getContext('2d');
+g.imageSmoothingEnabled = false;
 
 const fillAreaWidth = 700;
 const fillAreaHeight = 630;
