@@ -144,6 +144,7 @@ function createColorMenu() {
 function setup() {
     g.clearRect(0, 0, canvas.width, canvas.height);
     createCanvas();
+    console.log(g.getImageData(0, 0, fillAreaWidth, fillAreaHeight));
     drawColorMenu();
 }
 
