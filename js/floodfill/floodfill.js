@@ -11,7 +11,7 @@ g.imageSmoothingEnabled = false;
 const fillAreaWidth = 700;
 const fillAreaHeight = 630;
 const colorboxes = createColorMenu();
-let selectedColor = 0xff00ffff; //rgba
+let selectedColor = 0xffffffff; //rgba
 
 canvas.addEventListener('mousedown', function (event) {
     let ex = Math.floor(event.offsetX);
@@ -71,7 +71,7 @@ function getPixel(data, x, y) {
 
 function createCanvas() {
     g.fillStyle = 'white';
-    g.fillRect(0, 0, fillAreaWidth, fillAreaHeight);
+    g.fillRect(0, 0, canvas.width, canvas.height);
     g.fillStyle = 'black';
     g.strokeRect(0, 0, fillAreaWidth, fillAreaHeight);
 
@@ -144,7 +144,6 @@ function createColorMenu() {
 function setup() {
     g.clearRect(0, 0, canvas.width, canvas.height);
     createCanvas();
-    console.log(g.getImageData(0, 0, fillAreaWidth, fillAreaHeight));
     drawColorMenu();
 }
 
