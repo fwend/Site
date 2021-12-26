@@ -14,7 +14,7 @@ const h = canvas.height;
 const movers = initMovers(10);
 const attractor = new Attractor(w / 2, h / 2, 0, 0, 20, 1);
 const color1 = intToHexString(randomInt(0x707070ff, 0x707070ff));
-const color2 = brighter(color1, 20);
+const color2 = brighter(color1, 40);
 
 function initMovers(num) {
     const result = Array(num);
@@ -50,7 +50,7 @@ function drawMover(mover) {
 
 function draw() {
     g.clearRect(0, 0, w, h);
-    const gradient = g.createLinearGradient(0, 0, 0, h);
+    const gradient = g.createLinearGradient(Math.floor(w / 2), 0, Math.floor(w / 2), h);
     gradient.addColorStop(0, color1);
     gradient.addColorStop(1, color2);
     g.fillStyle = gradient;
