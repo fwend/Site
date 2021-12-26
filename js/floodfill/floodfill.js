@@ -7,14 +7,19 @@ canvas.height = 700;
 
 const g = canvas.getContext('2d');
 
-const fillAreaWidth = 700; // TODO scaling
-const fillAreaHeight = 630; // TODO scaling
+const fillAreaWidth = 700;
+const fillAreaHeight = 630;
 const colorboxes = createColorMenu();
 let selectedColor = 0xff00ffff; //rgba
 
 canvas.addEventListener('mousedown', function (event) {
-    const ex = Math.floor(event.offsetX);
-    const ey = Math.floor(event.offsetY );
+    let ex = Math.floor(event.offsetX);
+    let ey = Math.floor(event.offsetY );
+
+    const rect = canvas.getBoundingClientRect();
+    ex = Math.floor(ex * (canvas.width / rect.width));
+    ey = Math.floor(ey * (canvas.height / rect.height));
+
     if (ex >= 0 && ey >= 0 && ex < fillAreaWidth && ey < fillAreaHeight) {
         floodFill(ex, ey, selectedColor)
     } else {
@@ -106,7 +111,7 @@ function drawLine(x1, y1, x2, y2, width = 5, color = 'black') {
 }
 
 function drawColorMenu() {
-    g.clearRect(0, fillAreaHeight, canvas.width, 70); // TODO scaling
+    g.clearRect(0, fillAreaHeight, canvas.width, 70);
     g.lineWidth = 1;
     for (const box of colorboxes) {
         if (box.selected) {
@@ -127,7 +132,7 @@ function createColorMenu() {
         0x9fe2bfff, 0x00ffffff, 0xffff0fff, 0x808080ff, 0xc0c0c0ff, 0x00ff00ff, 0xffffffff, 0xccccffff
     ];
     for (let i = 0; i < colors.length; i++) {
-        const x = 30 + i * 40; // TODO scaling
+        const x = 30 + i * 40;
         const y = fillAreaHeight + 25;
         colorboxes.push(new Colorbox(x, y, 30, 30, colors[i]))
 
