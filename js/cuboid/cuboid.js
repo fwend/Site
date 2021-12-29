@@ -12,7 +12,7 @@ const edges = [[0, 1], [1, 3], [3, 2], [2, 0], [4, 5], [5, 7], [7, 6],
 
 let mouseX = 0, prevMouseX, mouseY = 0, prevMouseY;
 
-canvas.addEventListener('mousemove', function (event) {
+canvas.addEventListener('pointermove', function (event) {
     prevMouseX = mouseX;
     prevMouseY = mouseY;
     mouseX = event.x;
