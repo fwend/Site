@@ -53,4 +53,8 @@ export default class PVector {
     static div(pvector, val) {
         return new PVector(pvector.x / val, pvector.y / val);
     }
+
+    static add(pvector1, pvector2) {
+        return new PVector(pvector1.x + pvector2.x, pvector1.y + pvector2.y);
+    }
 }

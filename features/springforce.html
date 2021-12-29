@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Fwend.nl - Cuboid</title>
+    <title>Fwend.nl - Spring Force</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
@@ -9,12 +10,15 @@
     <style>
         canvas {
             display: block;
-            height: clamp(200px, 55vw, 700px);
-            width: clamp(200px, 55vw, 700px);
+            height: clamp(200px, 50vw, 640px);
+            width: clamp(200px, 50vw, 640px);
             margin: 50px auto 0;
+            background-color: yellow;
+            border: 0
         }
     </style>
 </head>
+
 <body>
 
 <div class="container">
@@ -27,13 +31,14 @@
     </header>
 
     <main class="content">
-        <h1>Cuboid</h1>
-        <p>A cuboid is an elongated cube. If you move your mouse or pointer over it, you can change its orientation.
-            (On mobile devices tipping next to the cuboid seems to work best.)</p>
-        <p><a href="https://github.com/fwend/Site/blob/master/js/cuboid/cuboid.js"
+        <h1>Spring Force</h1>
+        <p></p>
+        
+        <p><a href="https://github.com/fwend/Site/blob/master/js/springforce/springforce.js"
               target="_blank">View code on Github</a></p>
+
         <canvas></canvas>
-        <script src="../js/cuboid/cuboid.js" defer></script>
+        <script type="module" src="../js/springforce/springforce.js" defer></script>
     </main>
 
     <footer class="footer">
