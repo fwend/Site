@@ -25,6 +25,11 @@ export default class PVector {
         this.y /= pvector.y;
     }
 
+    divByVal(val) {
+        this.x /= val;
+        this.y /= val;
+    }
+
     mult(val) {
         this.x *= val;
         this.y *= val;

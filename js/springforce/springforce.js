@@ -61,7 +61,7 @@ function drawBob() {
     const fourth = Math.round(bob.box.w / 4);
     drawLine(halfWidth - fourth, 0, halfWidth + fourth, 0);
     drawLine(bob.box.x + fourth, bob.box.y - 1, bob.box.x + bob.box.w - fourth, bob.box.y - 1);
-    drawBox(bob)
+    drawBox(bob.box)
 }
 
 function draw() {
@@ -89,13 +89,7 @@ function drawLine(x1, y1, x2, y2, width = 1, color = 'black') {
 function drawBox(box, width = 1, color = 'black') {
     g.lineWidth = width;
     g.strokeStyle = color;
-    g.beginPath();
-    g.moveTo(box.x, box.y);
-    g.lineTo(box.x + box.w, box.y);
-    g.lineTo(box.x + box.w, box.y + box.h);
-    g.lineTo(box.x, box.y + box.h);
-    g.closePath();
-    g.stroke();
+    g.strokeRect(box.x, box.y, box.w, box.h);
 }
 
 setInterval(function () {

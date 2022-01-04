@@ -20,7 +20,7 @@ export default class Bob {
     applyForce(force) {
         if (!this.dragging) {
             const f = force.copy();
-            f.div(this.mass);
+            f.divByVal(this.mass);
             this.acceleration.add(f);
         }
     }
