@@ -32,8 +32,8 @@ export default class Bob {
             this.position.add(this.velocity);
             this.acceleration.mult(0);
         }
-        this.box.x = Math.floor(this.position.x - this.box.w / 2);
-        this.box.y = Math.floor(this.position.y);
+        this.box.x = Math.round(this.position.x - this.box.w / 2);
+        this.box.y = Math.round(this.position.y);
     }
 
     handleDrag(mx, my) {

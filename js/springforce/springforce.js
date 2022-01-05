@@ -17,16 +17,28 @@ const bob = new Bob(halfWidth, 300, halfWidth);
 const gravity = new PVector(0, 2);
 
 canvas.addEventListener('mousedown', function (e) {
-    bob.handleClick(e.offsetX, e.offsetY);
+    const coords = scaleMouseCoords(e.offsetX, e.offsetY);
+    console.log(1)
+    bob.handleClick(coords.x, coords.y);
 });
 
 canvas.addEventListener('mouseup', function () {
+    console.log(3)
     bob.stopDragging();
 });
 
 canvas.addEventListener('pointermove', function (e) {
-    bob.handleDrag(e.offsetX, e.offsetY);
+    const coords = scaleMouseCoords(e.offsetX, e.offsetY);
+    console.log(2)
+    bob.handleDrag(coords.x, coords.y);
 });
+
+function scaleMouseCoords(ex, ey) {
+    const rect = canvas.getBoundingClientRect();
+    ex = Math.round(Math.round(ex) * (w / rect.width));
+    ey = Math.round(Math.round(ey) * (h / rect.height));
+    return {x: ex, y: ey};
+}
 
 function drawSpring() {
     const springWidth = 26;
@@ -39,7 +51,7 @@ function drawSpring() {
     const bobAngle = Math.atan2(dx, box.y);
 
     // the line from anchor to bob
-    // const hypot = Math.floor(Math.sqrt(Math.pow(dx, 2) + Math.pow(box.y, 2)));
+    // const hypot = Math.round(Math.sqrt(Math.pow(dx, 2) + Math.pow(box.y, 2)));
     const hypot = Math.round(Math.hypot(dx, box.y));
 
     // the start segAngle of the spring segments
