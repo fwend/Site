@@ -1,6 +1,7 @@
 import PVector from "../_shared/pvector.js";
 import Spring from "./spring.js";
 import Bob from "./bob.js";
+import mouseTracker from "../_shared/tracker.js";
 
 const w = 640;
 const h = 640;
@@ -16,29 +17,22 @@ const spring = new Spring(halfWidth, 0, halfWidth, 180);
 const bob = new Bob(halfWidth, 300, halfWidth);
 const gravity = new PVector(0, 2);
 
-canvas.addEventListener('mousedown', function (e) {
-    const coords = scaleMouseCoords(e.offsetX, e.offsetY);
-    console.log(1)
-    bob.handleClick(coords.x, coords.y);
-});
+mouseTracker(canvas, function(eventType, x, y) {
+    switch(eventType) {
 
-canvas.addEventListener('mouseup', function () {
-    console.log(3)
-    bob.stopDragging();
-});
+        case 'down':
+            bob.handleClick(x, y);
+            break;
 
-canvas.addEventListener('pointermove', function (e) {
-    const coords = scaleMouseCoords(e.offsetX, e.offsetY);
-    console.log(2)
-    bob.handleDrag(coords.x, coords.y);
-});
+        case 'move':
+            bob.handleDrag(x, y);
+            break;
 
-function scaleMouseCoords(ex, ey) {
-    const rect = canvas.getBoundingClientRect();
-    ex = Math.round(Math.round(ex) * (w / rect.width));
-    ey = Math.round(Math.round(ey) * (h / rect.height));
-    return {x: ex, y: ey};
-}
+        case 'up':
+            bob.stopDragging();
+            break;
+    }
+});
 
 function drawSpring() {
     const springWidth = 26;

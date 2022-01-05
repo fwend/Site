@@ -1,3 +1,5 @@
+import mouseTracker from "../_shared/tracker.js";
+
 const canvas = document.querySelector('canvas');
 canvas.width = 700;
 canvas.height = 700;
@@ -11,18 +13,34 @@ const edges = [[0, 1], [1, 3], [3, 2], [2, 0], [4, 5], [5, 7], [7, 6],
 [6, 4], [0, 4], [1, 5], [2, 6], [3, 7]];
 
 let mouseX = 0, prevMouseX, mouseY = 0, prevMouseY;
+let dragging = false;
 
-canvas.addEventListener('pointermove', function (event) {
-    prevMouseX = mouseX;
-    prevMouseY = mouseY;
-    mouseX = event.x;
-    mouseY = event.y;
+mouseTracker(canvas, function(eventType, x, y) {
+    switch (eventType) {
 
-    const incrX = (mouseX - prevMouseX) * 0.01;
-    const incrY = (mouseY - prevMouseY) * 0.01;
+        case 'down':
+            dragging = true;
+            break;
 
-    rotateCuboid(incrX, incrY);
-    drawCuboid();
+        case 'move':
+            if (dragging) {
+                prevMouseX = mouseX;
+                prevMouseY = mouseY;
+                mouseX = x;
+                mouseY = y;
+
+                const incrX = (mouseX - prevMouseX) * 0.01;
+                const incrY = (mouseY - prevMouseY) * 0.01;
+
+                rotateCuboid(incrX, incrY);
+                drawCuboid();
+            }
+            break;
+
+        case 'up':
+            dragging = false;
+            break;
+    }
 });
 
 function scale(factor0, factor1, factor2) {

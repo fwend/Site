@@ -1,5 +1,6 @@
 import Colorbox from "./colorbox.js";
 import {intToHexString} from "../_shared/color.js";
+import mouseTracker from "../_shared/tracker.js";
 
 const canvas = document.querySelector('canvas');
 canvas.width = 700;
@@ -13,26 +14,27 @@ const fillAreaHeight = 630;
 const colorboxes = createColorMenu();
 let selectedColor = 0xffffffff; //rgba
 
-canvas.addEventListener('mousedown', function (event) {
-    let ex = Math.floor(event.offsetX);
-    let ey = Math.floor(event.offsetY );
+mouseTracker(canvas, function(eventType, x, y) {
+    switch(eventType) {
 
-    const rect = canvas.getBoundingClientRect();
-    ex = Math.floor(ex * (canvas.width / rect.width));
-    ey = Math.floor(ey * (canvas.height / rect.height));
+        case 'down':
+            if (x >= 0 && y >= 0 && x < fillAreaWidth && y < fillAreaHeight) {
+                floodFill(x, y, selectedColor)
+            } else {
 
-    if (ex >= 0 && ey >= 0 && ex < fillAreaWidth && ey < fillAreaHeight) {
-        floodFill(ex, ey, selectedColor)
-    } else {
-
-        for (const box of colorboxes) {
-            box.selected = false;
-            if (box.withinBounds(ex, ey)) {
-                selectedColor = box.color;
-                box.selected = true;
+                for (const box of colorboxes) {
+                    box.selected = false;
+                    if (box.withinBounds(x, y)) {
+                        selectedColor = box.color;
+                        box.selected = true;
+                    }
+                }
+                drawColorMenu()
             }
-        }
-        drawColorMenu()
+            break;
+
+        default:
+            break;
     }
 });
 
