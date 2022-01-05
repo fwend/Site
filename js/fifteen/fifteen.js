@@ -1,3 +1,5 @@
+import mouseTracker from "../_shared/tracker.js";
+
 const canvas = document.querySelector('canvas');
 canvas.width = 700;
 canvas.height = 750;
@@ -18,11 +20,17 @@ image.src = "../img/hamburger.png";
 
 g.font = '20px sans-serif';
 
-canvas.addEventListener('mousedown', function (event) {
-    const rect = canvas.getBoundingClientRect();
-    const ex = Math.floor(event.offsetX);
-    const ey = Math.floor(event.offsetY);
 
+mouseTracker(canvas, function(eventType, x, y) {
+    switch (eventType) {
+
+        case 'down':
+            handleMouseDown(x, y);
+            break;
+    }
+});
+
+function handleMouseDown(ex, ey) {
     if (gameOver) {
         newGame();
 
@@ -32,8 +40,8 @@ canvas.addEventListener('mousedown', function (event) {
             return;
         }
 
-        const c1 = Math.floor(ex / (rect.width / side));
-        const r1 = Math.floor(ey / (rect.width / side));
+        const c1 = Math.floor(ex / tileSize);
+        const r1 = Math.floor(ey / tileSize);
         const c2 = blankPos % side;
         const r2 = Math.floor(blankPos / side);
 
@@ -59,7 +67,7 @@ canvas.addEventListener('mousedown', function (event) {
         gameOver = isSolved();
     }
     drawGrid();
-});
+}
 
 function newGame() {
     do {
