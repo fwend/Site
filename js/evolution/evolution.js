@@ -64,6 +64,6 @@ function main(child) {
     do {
         child = nextGeneration(child);
         dist = distance(child);
-        presentResult(table, count, child, dist)
+        presentResult(table, count, child, dist);
     } while (dist > 0 && count++ < 1000);
 }

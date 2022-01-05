@@ -22,17 +22,30 @@
 
     <main class="content">
         <h1>Evolution</h1>
-        <p>The evolution exercise (aka as the <a href="https://en.wikipedia.org/wiki/Weasel_program#Weasel_algorithm">
-            Weasel program</a>), is a computer simulation illustrating the idea that the evolutionary process is
+        <p>The evolution exercise, aka as the <a href="https://en.wikipedia.org/wiki/Weasel_program#Weasel_algorithm">
+            Weasel program</a>, is a computer simulation illustrating the idea that the evolutionary process is
             different from pure chance.
         </p>
-        <p></p>
+        <p>We start with a target string, which is conventionally: METHINKS IT IS LIKE A WEASEL. </p>
+
+        <p>When the startbutton is pressed, a random string of the same length is generated. From this random string
+        a certain number of mutations are created, a hundred in our case, by changing a small number of random characters of
+        each copy.</p>
+
+        <p>This new generation of mutations is then tested against the target string. The mutation that has the most
+        characters in common with the target (by accident), will be chosen to be the parent of the next generation.</p>
+
+        <p>Through this process the mutated strings will slowly converge on the target, until at least one of them is
+            exactly the same.</p>
+
+        <p>Remember, we create a hundred mutations every generation, so if we get a positive result after, say, 55
+        generations, then in reality we've generated 5500 randomly altered strings and tested them for convergence.</p>
 
         <p><a href="https://github.com/fwend/Site/blob/master/js/evolution/evolution.js"
               target="_blank">View code on Github</a></p>
 
         <div class="evolution-intro">
-            <p>METHINKS IT IS LIKE A WEASEL</p>
+            <p>Target: METHINKS IT IS LIKE A WEASEL</p>
             <label><input class="startButton" type="button" value="start"></label>
         </div>
 
