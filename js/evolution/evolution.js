@@ -1,29 +1,20 @@
-const target = "METHINKS IT IS LIKE A WEASEL";
+import {createRandomString, randomChar} from "../_shared/string.js";
+
+const target = "methinks it is like a weasel";
 const alphabet = "abcdefghijklmnopqrstuvwxyz ";
 const genSize = 100;
+const prob = 0.05;
 
 const startButton = document.querySelector('.startButton');
 
-startButton.addEventListener('click', function(e) {
-    main(createRandomString(target.length));
+startButton.addEventListener('click', function() {
+    main(createRandomString(target.length, alphabet));
 });
-
-function createRandomString(len) {
-    let str = '';
-    for (let i = 0; i < len; i++) {
-        str += randomChar();
-    }
-    return str;
-}
-
-function randomChar() {
-    return alphabet[Math.floor(Math.random() * alphabet.length)];
-}
 
 function distance(str) {
     let count = 0;
     for (let i = 0; i < str.length; i++) {
-        if (str[i].toLowerCase() !== target[i].toLowerCase()) {
+        if (str[i] !== target[i]) {
             count++;
         }
     }
@@ -33,7 +24,7 @@ function distance(str) {
 function mutate(parent) {
     let result = '';
     for (let i = 0; i < parent.length; i++) {
-        result += Math.random() < 0.05 ? randomChar() : parent[i];
+        result += Math.random() < prob ? randomChar(alphabet) : parent[i];
     }
     return result;
 }
@@ -52,11 +43,27 @@ function nextGeneration(parent) {
     return best;
 }
 
-let count = 0;
+function presentResult(table, count, result, dist) {
+    const row = table.insertRow(-1);
+
+    const cell1 = row.insertCell(0);
+    const cell2 = row.insertCell(1);
+    const cell3 = row.insertCell(2);
+    cell1.innerHTML = count;
+    cell2.innerHTML = dist === 0 ? result.toUpperCase(): result;
+    cell3.innerHTML = dist;
+}
+
 function main(child) {
+    const table = document.querySelector('table.evolution');
+    while (table.rows.length > 1) {
+        table.deleteRow(1);
+    }
+
+    let count = 1, dist = 1;
     do {
         child = nextGeneration(child);
-        console.log(child)
-    } while (child !== target && count++ < 1000);
-    console.log(child.toUpperCase())
+        dist = distance(child);
+        presentResult(table, count, child, dist)
+    } while (dist > 0 && count++ < 1000);
 }

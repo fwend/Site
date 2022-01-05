@@ -202,7 +202,12 @@ table.evolution {
 table.evolution th, table.evolution td {
     border: 1px solid lightGray;
     text-align: left;
-    padding: 5px;
+    padding: 2px 5px;
+}
+
+table.evolution td {
+    font-family: monospace;
+    white-space: pre;
 }
 
 @media only screen and (max-width: 500px) {
