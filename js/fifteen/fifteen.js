@@ -20,7 +20,6 @@ image.src = "../img/hamburger.png";
 
 g.font = '20px sans-serif';
 
-
 mouseTracker(canvas, function(eventType, x, y) {
     switch (eventType) {
 
