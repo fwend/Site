@@ -10,7 +10,7 @@ const g = canvas.getContext('2d');
 g.imageSmoothingEnabled = false;
 
 const fillAreaWidth = 700;
-const fillAreaHeight = 630;
+const fillAreaHeight = 600;
 const colorboxes = createColorMenu();
 let selectedColor = 0xffffffff; //rgba
 
@@ -114,7 +114,7 @@ function drawLine(x1, y1, x2, y2, width = 5, color = 'black') {
 }
 
 function drawColorMenu() {
-    g.clearRect(0, fillAreaHeight, canvas.width, 70);
+    g.clearRect(0, fillAreaHeight, canvas.width, 100);
     g.lineWidth = 1;
     for (const box of colorboxes) {
         if (box.selected) {
@@ -131,13 +131,12 @@ function drawColorMenu() {
 function createColorMenu() {
     const colorboxes = [];
     const colors = [
-        0xff0000ff, 0x0000ffff, 0x008000ff, 0xff5733ff, 0xffff00ff, 0xff00ffff, 0x800080ff, 0x800000ff,
-        0x9fe2bfff, 0x00ffffff, 0xffff0fff, 0x808080ff, 0xc0c0c0ff, 0x00ff00ff, 0xffffffff, 0xccccffff
+        0xff0000ff, 0x5555ffff, 0x009000ff, 0xffbd33ff, 0xffff00ff, 0xff00ffff, 0x800080ff, 0x800000ff
     ];
     for (let i = 0; i < colors.length; i++) {
-        const x = 30 + i * 40;
-        const y = fillAreaHeight + 25;
-        colorboxes.push(new Colorbox(x, y, 30, 30, colors[i]))
+        const x = 70 + i * 70;
+        const y = fillAreaHeight + 15;
+        colorboxes.push(new Colorbox(x, y, 60, 60, colors[i]))
 
     }
     return colorboxes;
