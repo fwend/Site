@@ -181,6 +181,30 @@ table.wolfram td {
     text-align: center;
 }
 
+.startButton {
+    font-size: 2rem;
+    padding: 2px 10px;
+}
+
+.evolution-intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+table.evolution {
+    border: 1px solid lightGray;
+    border-collapse: collapse;
+    width: 70%;
+    font-size: 1.5rem;
+}
+
+table.evolution th, table.evolution td {
+    border: 1px solid lightGray;
+    text-align: left;
+    padding: 5px;
+}
+
 @media only screen and (max-width: 500px) {
     .content p {
         text-align: left;
