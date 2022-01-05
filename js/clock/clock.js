@@ -59,6 +59,4 @@ function drawFace() {
     g.stroke();
 }
 
-setInterval(function() {
-    drawClock();
-}, 1000);
+setInterval(drawClock, 1000);

@@ -85,7 +85,5 @@
 
     draw();
 
-    setInterval(function () {
-        draw();
-    }, 2000);
+    setInterval(draw, 2000);
 })();

@@ -60,6 +60,4 @@ function draw() {
 
 draw();
 
-setInterval(function () {
-    draw();
-}, 10000);
+setInterval(draw, 10000);

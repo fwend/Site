@@ -98,6 +98,4 @@ function drawBox(box, width = 1, color = 'black') {
     g.strokeRect(box.x, box.y, box.w, box.h);
 }
 
-setInterval(function () {
-    draw();
-}, 17);
+setInterval(draw, 17);
