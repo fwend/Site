@@ -117,7 +117,7 @@ nav.mosaic {
     justify-content: space-between;
 }
 
-.footer img#portrait {
+.footer img.portrait {
     position: absolute;
     top: -50px;
     width: var(--portrait-size);
