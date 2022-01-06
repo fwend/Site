@@ -38,24 +38,24 @@
             loop. In pseudo code, from the Rosetta Code task I created, a few years back:</p>
 
         <code>
-     set incr to 0.0
+ set incr to 0.0
 
-     // animation loop
-     WHILE true
+ // animation loop
+ WHILE true
 
-     incr = (incr + 0.05) MOD 360
-     x = width / 2
-     y = height / 2
-     length = 5
-     angle = incr
+ incr = (incr + 0.05) MOD 360
+ x = width / 2
+ y = height / 2
+ length = 5
+ angle = incr
 
-     // spiral loop
-     FOR 1 TO 150
-     drawline
-     change direction by angle
-     length = length + 3
-     angle = (angle + incr) MOD 360
-     ENDFOR
+ // spiral loop
+ FOR 1 TO 150
+ drawline
+ change direction by angle
+ length = length + 3
+ angle = (angle + incr) MOD 360
+ ENDFOR
         </code>
 
         <p>It takes a while to get started, but it's quite spectacular.</p>

@@ -13,7 +13,7 @@ export default class Bob {
         // Arbitrary damping to simulate friction / drag
         this.damping = 0.98;
         this.dragOffset = new PVector(0, 0);
-        this.box = new Box(0, 0, 50, 50);
+        this.box = new Box(0, 0, 75, 75);
         this.dragging = false;
     }
 
