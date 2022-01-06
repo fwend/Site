@@ -251,3 +251,9 @@ table.evolution td {
         margin-left: -20px;
     }
 }
+
+@media only screen and (hover: none) {
+    figure.desktop-only {
+        display: none;
+    }
+}
