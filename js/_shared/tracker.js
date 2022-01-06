@@ -1,4 +1,4 @@
-export default function mouseTracker(canvas, handler, doScale = true) {
+export default function pointerTracker(canvas, handler, doScale = true) {
 
     function processEvent(e) {
         const rect = canvas.getBoundingClientRect();

@@ -7,7 +7,7 @@ const prob = 0.05;
 
 const startButton = document.querySelector('.startButton');
 
-startButton.addEventListener('click', function() {
+startButton.addEventListener('click', function () {
     main(createRandomString(target.length, alphabet));
 });
 
@@ -50,7 +50,7 @@ function presentResult(table, count, result, dist) {
     const cell2 = row.insertCell(1);
     const cell3 = row.insertCell(2);
     cell1.innerHTML = count;
-    cell2.innerHTML = dist === 0 ? result.toUpperCase(): result;
+    cell2.innerHTML = dist === 0 ? result.toUpperCase() : result;
     cell3.innerHTML = dist;
 }
 

@@ -11,9 +11,9 @@ canvas.height = config.height;
 
 const g = canvas.getContext('2d');
 
-const right = { x: 1, y: 0 };
-const down = { x: 0, y: 1 };
-const left = { x: -1, y: 0 };
+const right = {x: 1, y: 0};
+const down = {x: 0, y: 1};
+const left = {x: -1, y: 0};
 
 const nRows = 18;
 const nCols = 12;

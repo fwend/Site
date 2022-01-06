@@ -47,7 +47,7 @@ function drawTree(x1, y1, x2, y2, depth) {
     g.strokeStyle = "lightGray";
     g.stroke();
 
-    setTimeout(function() {
+    setTimeout(function () {
         drawTree(x4, y4, x5, y5, depth + 1);
         drawTree(x5, y5, x3, y3, depth + 1);
     }, 500);

@@ -1,4 +1,4 @@
-import mouseTracker from "../_shared/tracker.js";
+import pointerTracker from "../_shared/tracker.js";
 
 const canvas = document.querySelector('canvas');
 canvas.width = 700;
@@ -7,15 +7,15 @@ canvas.height = 700;
 const g = canvas.getContext('2d');
 
 const nodes = [[-1, -1, -1], [-1, -1, 1], [-1, 1, -1], [-1, 1, 1],
-[1, -1, -1], [1, -1, 1], [1, 1, -1], [1, 1, 1]];
+    [1, -1, -1], [1, -1, 1], [1, 1, -1], [1, 1, 1]];
 
 const edges = [[0, 1], [1, 3], [3, 2], [2, 0], [4, 5], [5, 7], [7, 6],
-[6, 4], [0, 4], [1, 5], [2, 6], [3, 7]];
+    [6, 4], [0, 4], [1, 5], [2, 6], [3, 7]];
 
 let mouseX = 0, prevMouseX, mouseY = 0, prevMouseY;
 let dragging = false;
 
-mouseTracker(canvas, function(eventType, x, y) {
+pointerTracker(canvas, function (eventType, x, y) {
     switch (eventType) {
 
         case 'down':
@@ -98,7 +98,7 @@ function drawCuboid() {
 scale(80, 120, 160);
 rotateCuboid(Math.PI / 5, Math.PI / 9);
 
-setInterval(function() {
+setInterval(function () {
     rotateCuboid(Math.PI / 180, 0);
     drawCuboid();
 }, 17);

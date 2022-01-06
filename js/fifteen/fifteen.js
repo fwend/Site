@@ -1,4 +1,4 @@
-import mouseTracker from "../_shared/tracker.js";
+import pointerTracker from "../_shared/tracker.js";
 
 const canvas = document.querySelector('canvas');
 canvas.width = 700;
@@ -20,7 +20,7 @@ image.src = "../img/hamburger.png";
 
 g.font = '20px sans-serif';
 
-mouseTracker(canvas, function(eventType, x, y) {
+pointerTracker(canvas, function (eventType, x, y) {
     switch (eventType) {
 
         case 'down':

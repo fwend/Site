@@ -1,7 +1,7 @@
 import PVector from "../_shared/pvector.js";
 import Spring from "./spring.js";
 import Bob from "./bob.js";
-import mouseTracker from "../_shared/tracker.js";
+import pointerTracker from "../_shared/tracker.js";
 
 const w = 640;
 const h = 640;
@@ -17,8 +17,8 @@ const spring = new Spring(halfWidth, 0, halfWidth, 180);
 const bob = new Bob(halfWidth, 300, halfWidth);
 const gravity = new PVector(0, 2);
 
-mouseTracker(canvas, function(eventType, x, y) {
-    switch(eventType) {
+pointerTracker(canvas, function (eventType, x, y) {
+    switch (eventType) {
 
         case 'down':
             bob.handleClick(x, y);

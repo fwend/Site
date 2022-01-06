@@ -40,7 +40,7 @@ function createFern(leftMargin, topMargin, w, h) {
 }
 
 function animate() {
-    setTimeout(function() {
+    setTimeout(function () {
         let requestID = requestAnimationFrame(animate);
         if (pixelCount < limit) {
             for (let i = pixelCount; i < 500 + pixelCount; i++) {

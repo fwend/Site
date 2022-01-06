@@ -13,7 +13,7 @@ const ruleSet = [30, 45, 50, 57, 62, 70, 73, 75, 86, 89, 90, 99,
 const cells = createMatrix(canvas.height, canvas.width);
 let rule = 0;
 
-cells[0][Math.floor(canvas.width/ 2)] = 1; // starting point
+cells[0][Math.floor(canvas.width / 2)] = 1; // starting point
 
 function applyRules(lhs, mid, rhs) {
     const idx = (lhs << 2 | mid << 1 | rhs); // 8 possible neighborhoods

@@ -1,6 +1,6 @@
 import Colorbox from "./colorbox.js";
 import {intToHexString} from "../_shared/color.js";
-import mouseTracker from "../_shared/tracker.js";
+import pointerTracker from "../_shared/tracker.js";
 
 const canvas = document.querySelector('canvas');
 canvas.width = 700;
@@ -14,8 +14,8 @@ const fillAreaHeight = 600;
 const colorboxes = createColorMenu();
 let selectedColor = 0xffffffff; //rgba
 
-mouseTracker(canvas, function(eventType, x, y) {
-    switch(eventType) {
+pointerTracker(canvas, function (eventType, x, y) {
+    switch (eventType) {
 
         case 'down':
             if (x >= 0 && y >= 0 && x < fillAreaWidth && y < fillAreaHeight) {
@@ -31,9 +31,6 @@ mouseTracker(canvas, function(eventType, x, y) {
                 }
                 drawColorMenu()
             }
-            break;
-
-        default:
             break;
     }
 });

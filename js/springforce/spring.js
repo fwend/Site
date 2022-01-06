@@ -9,29 +9,29 @@ export default class Spring {
         this.anchor = new PVector(x, y);
         this.restLength = len;
     }
-    
+
     getSpringForce(bob) {
-    
+
         // Vector pointing from anchor to bob location
         const force = PVector.sub(bob.position, this.anchor);
-    
+
         // What is distance
         const dist = force.mag();
-    
+
         // Stretch is difference between current distance and rest length
         const stretch = dist - this.restLength;
-    
+
         // Calculate force according to Hooke'spring Law: F = k * stretch
         force.normalize();
         force.mult(-1 * k * stretch);
-    
+
         return force;
     }
-    
+
     constrainLength(bob, min, max) {
         const force = PVector.sub(bob.position, this.anchor);
         const fm = force.mag();
-    
+
         if (fm < min) {
             force.normalize();
             force.mult(min);
