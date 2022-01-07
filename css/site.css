@@ -211,8 +211,6 @@ table.evolution td {
 }
 
 blockquote {
-    display: grid;
-    grid-template-columns: 1fr 9fr;
     position: relative;
     font-size: 1.5rem;
     background: #f9f9f9;
@@ -220,6 +218,11 @@ blockquote {
     border-right: 30px solid #ccc;
     margin: 1.5em 0;
     padding: 0.5em 20px;
+}
+
+blockquote.play {
+    display: grid;
+    grid-template-columns: minmax(100px, 1fr) 9fr;
 }
 
 blockquote:before {
