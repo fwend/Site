@@ -45,7 +45,6 @@ function drawSpring() {
     const bobAngle = Math.atan2(dx, box.y);
 
     // the line from anchor to bob
-    // const hypot = Math.round(Math.sqrt(Math.pow(dx, 2) + Math.pow(box.y, 2)));
     const hypot = Math.round(Math.hypot(dx, box.y));
 
     // the start segAngle of the spring segments
@@ -64,9 +63,9 @@ function drawSpring() {
 }
 
 function drawBob() {
-    const fourth = Math.round(bob.box.w / 4);
-    drawLine(halfWidth - fourth, 0, halfWidth + fourth, 0);
-    drawLine(bob.box.x + fourth, bob.box.y - 1, bob.box.x + bob.box.w - fourth, bob.box.y - 1);
+    const quarterWidth = Math.round(bob.box.w / 4);
+    drawLine(halfWidth - quarterWidth, 0, halfWidth + quarterWidth, 0);
+    drawLine(bob.box.x + quarterWidth, bob.box.y - 1, bob.box.x + bob.box.w - quarterWidth, bob.box.y - 1);
     drawBox(bob.box)
 }
 
