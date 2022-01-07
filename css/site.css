@@ -30,6 +30,7 @@ p {
     max-width: 1215px;
     min-width: 300px;
     min-height: 100vh;
+    background: white;
 }
 
 .header {
