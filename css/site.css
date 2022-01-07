@@ -222,7 +222,7 @@ blockquote {
 
 blockquote.play {
     display: grid;
-    grid-template-columns: minmax(100px, 1fr) 9fr;
+    grid-template-columns: 8rem 1fr;
 }
 
 blockquote:before {
