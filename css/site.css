@@ -73,17 +73,17 @@ a:link, a:visited, a:hover, a:active {
     border-bottom: 3px solid white;
 }
 
-.content {
+.main {
     margin: var(--standard-gap) var(--side-margin);
     padding-bottom: var(--footer-clearance);
 }
 
-.content p {
+.main p {
     font-size: 1.5rem;
     text-align: justify;
 }
 
-.content h1 {
+.main h1 {
     margin-bottom: 1rem;
 }
 
@@ -245,9 +245,8 @@ blockquote:after {
     color: white;
 }
 
-
 @media only screen and (max-width: 500px) {
-    .content p {
+    .main p {
         text-align: left;
     }
     .intro {
@@ -280,6 +279,7 @@ blockquote:after {
         font-size: 1rem;
     }
 }
+
 @media only screen and (max-width: 350px) {
     /* on very narrow screens move the table somewhat to the left, so we don't have
     to make the font-size smaller because that would affect readability */
