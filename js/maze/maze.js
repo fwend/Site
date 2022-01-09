@@ -18,7 +18,7 @@ let maze;
 let solution;
 let solved = false;
 
-g.font = '20px sans-serif';
+g.font = '25px sans-serif';
 
 canvas.addEventListener('click', async function () {
     if (solved) {
@@ -62,9 +62,7 @@ async function solve(pos) {
     const c = Math.floor(pos % nCols);
     const r = Math.floor(pos / nCols);
 
-    const dirList = Dir.dirList();
-
-    for (const dir of dirList) {
+    for (const dir of Dir.dirList()) {
         const nc = c + dir.dx;
         const nr = r + dir.dy;
         if (withinBounds(nr, nc) && (maze[r][c] & dir.bit) !== 0
