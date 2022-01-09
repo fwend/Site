@@ -151,7 +151,6 @@ function drawLine(x1, y1, x2, y2, width = 4, color = 'black') {
 
 function draw(message = 'none') {
     g.clearRect(0, 0, canvas.width, canvas.height);
-    g.lineWidth = 5;
     drawMaze();
     drawPath();
     if (message !== 'none') {
