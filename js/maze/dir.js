@@ -4,8 +4,8 @@ export const E = 4;
 export const W = 8;
 
 export default class Dir {
-    constructor(bit, dx, dy, opposite) {
-        this.bit = bit;
+    constructor(direction, dx, dy, opposite) {
+        this.direction = direction;
         this.dx = dx;
         this.dy = dy;
         this.opposite = opposite;
@@ -14,10 +14,10 @@ export default class Dir {
     static dirList() {
         /* prefer south and east for the solving algorithm */
         const list = [];
-        list.push(new Dir(S, 0, 1, N));
-        list.push(new Dir(E, 1, 0, W));
-        list.push(new Dir(N, 0, -1, S));
-        list.push(new Dir(W, -1, 0, E));
+        list.push(Object.freeze(new Dir(S, 0, 1, N)));
+        list.push(Object.freeze(new Dir(E, 1, 0, W)));
+        list.push(Object.freeze(new Dir(N, 0, -1, S)));
+        list.push(Object.freeze(new Dir(W, -1, 0, E)));
         return list;
     }
 }

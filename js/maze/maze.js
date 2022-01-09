@@ -13,6 +13,7 @@ const nCols = 24;
 const nRows = 24;
 const cellSize = 25;
 const margin = 50;
+const dirList = Dir.dirList();
 
 let maze;
 let solution;
@@ -41,6 +42,8 @@ function init() {
 }
 
 function generateMaze(r, c) {
+    // we're not using the global dirlist here,
+    // because we want the shuffle to be localized
     const dirList = Dir.dirList();
     shuffleArray(dirList);
 
@@ -48,7 +51,7 @@ function generateMaze(r, c) {
         const nc = c + dir.dx;
         const nr = r + dir.dy;
         if (withinBounds(nr, nc) && maze[nr][nc] === 0) {
-            maze[r][c] |= dir.bit;
+            maze[r][c] |= dir.direction;
             maze[nr][nc] |= dir.opposite;
             generateMaze(nr, nc);
         }
@@ -62,10 +65,10 @@ async function solve(pos) {
     const c = Math.floor(pos % nCols);
     const r = Math.floor(pos / nCols);
 
-    for (const dir of Dir.dirList()) {
+    for (const dir of dirList) {
         const nc = c + dir.dx;
         const nr = r + dir.dy;
-        if (withinBounds(nr, nc) && (maze[r][c] & dir.bit) !== 0
+        if (withinBounds(nr, nc) && (maze[r][c] & dir.direction) !== 0
             && (maze[nr][nc] & 16) === 0) {
 
             const newPos = nr * nCols + nc;
