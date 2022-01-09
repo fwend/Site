@@ -1,4 +1,6 @@
 import {createMatrix} from "../_shared/matrix.js";
+import {shuffleArray} from "../_shared/array.js";
+import {sleep} from "../_shared/util.js";
 import Dir, {N, S, E, W} from "./dir.js";
 
 const canvas = document.querySelector('canvas');
@@ -42,7 +44,7 @@ function generateMaze(r, c) {
     const dirList = Dir.dirList();
     shuffleArray(dirList);
 
-    for (let dir of dirList) {
+    for (const dir of dirList) {
         const nc = c + dir.dx;
         const nr = r + dir.dy;
         if (withinBounds(nr, nc) && maze[nr][nc] === 0) {
@@ -61,9 +63,8 @@ async function solve(pos) {
     const r = Math.floor(pos / nCols);
 
     const dirList = Dir.dirList();
-    shuffleArray(dirList);
 
-    for (let dir of dirList) {
+    for (const dir of dirList) {
         const nc = c + dir.dx;
         const nr = r + dir.dy;
         if (withinBounds(nr, nc) && (maze[r][c] & dir.bit) !== 0
@@ -73,14 +74,12 @@ async function solve(pos) {
             solution.push(newPos);
             maze[nr][nc] |= 16;
 
-            draw();
-            await sleep(30);
+            await animate();
 
             if (await solve(newPos))
                 return true;
 
-            draw();
-            await sleep(30);
+            await animate();
 
             solution.pop();
             maze[nr][nc] &= ~16;
@@ -90,8 +89,9 @@ async function solve(pos) {
     return false;
 }
 
-async function sleep(msec) {
-    return new Promise(resolve => setTimeout(resolve, msec));
+async function animate() {
+    draw();
+    await sleep(30);
 }
 
 function drawMaze() {
@@ -160,10 +160,6 @@ function draw(message = 'none') {
 
 function withinBounds(r, c) {
     return c >= 0 && c < nCols && r >= 0 && r < nRows;
-}
-
-function shuffleArray(arr) {
-    arr.sort(() => Math.random() - 0.5);
 }
 
 init();
