@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Fwend.nl - Maze</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+    <link rel="stylesheet" href="../css/site.css">
+    <style>
+        canvas {
+            display: block;
+            height: clamp(200px, 55vw, 700px);
+            width: clamp(200px, 55vw, 700px);
+            margin: 50px auto 0;
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <header class="header">
+        <span class="logo">fwend.nl</span>
+        <nav>
+            <a href="../index.html">home</a>
+            <a href="../about.html">about me</a>
+        </nav>
+    </header>
+
+    <main class="main">
+        <h1>Maze</h1>
+        <p>A simple maze algorithm using a depth-first search for creation as well as solving. The maze is randomized
+            simply by shuffling the direction list on each iteration.</p>
+
+        <p>Due to the algorithm used, there's only one path. The path is found by a backtracking algorithm that
+            tries all directions at random and doesn't look ahead.</p>
+
+        <p>I'm resisting the templation to say that the app is "a-maze-ing", because that would be really cheap.</p>
+
+        <p><a href="https://github.com/fwend/Site/blob/master/js/maze/maze.js"
+              target="_blank">View code on Github</a></p>
+
+        <canvas></canvas>
+        <script type="module" src="../js/maze/maze.js" defer></script>
+    </main>
+
+    <footer class="footer">
+        <img class="portrait" src="../img/site/photo.png" alt="author">
+        <div class="colophon">
+            <i>Jos van Uden</i>
+            <div class="location"><img src="../img/site/location.png" alt="location">Tilburg, The Netherlands</div>
+        </div>
+        <div class="icons">
+            <a href="https://github.com/fwend/Site"><img src="../img/site/GitHub-Mark-Light-64px.png" alt="github"></a>
+            <a href="https://www.linkedin.com/in/fwend/"><img src="../img/site/linkedin.png" alt="linkedin"></a>
+            <a href="https://stackoverflow.com/users/531312/fwend"><img src="../img/site/stackoverflow.png"
+                                                                        alt="stackoverflow"></a>
+        </div>
+    </footer>
+
+</div>
+
+</body>
+</html>
