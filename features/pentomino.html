@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Fwend.nl - Pentomino Tiling</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+    <link rel="stylesheet" href="../css/site.css">
+    <style>
+        canvas {
+            display: block;
+            height: clamp(250px, 55vw, 700px);
+            width: clamp(250px, 55vw, 700px);
+            margin: 50px auto 0;
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <header class="header">
+        <span class="logo">fwend.nl</span>
+        <nav>
+            <a href="../index.html">home</a>
+            <a href="../about.html">about me</a>
+        </nav>
+    </header>
+
+    <main class="main">
+        <h1>Pentomino Tiling</h1>
+
+        <p>A <a href="https://en.wikipedia.org/wiki/Pentomino">pentomino</a> is a polyomino that consists of 5 squares.
+            There are 12 pentomino shapes, if you don't count rotations and reflections. Most pentominoes can form their
+            own mirror image through rotation, but some of them have to be flipped over.</p>
+
+        <img class="pentomino_tiles" src="../img/site/pentomino_tiles.gif" alt="pentomino_tiles">
+
+        <p>A Pentomino tiling is an example of an <a href="https://en.wikipedia.org/wiki/Exact_cover">exact cover</a>
+            problem and can take on many forms. A traditional tiling presents an 8 by 8 grid, where 4 cells are left
+            uncovered. The other cells are covered by the 12 pentomino shapes, without overlaps, with every shape only
+            used once.</p>
+
+        <p>The 4 uncovered cells should be chosen at random. Note that not all configurations are solvable.</p>
+
+        <p>(The above text is from the <a href="https://rosettacode.org/wiki/Pentomino_tiling">Rosetta Code</a> task
+            I created, a few years ago.)</p>
+
+        <p>The animation only shows an occasional snapshot of the backtracking algorithm, otherwise it would take too
+        long.</p>
+
+        <p><a href="https://github.com/fwend/Site/blob/master/js/pentomino/pentomino.js"
+              target="_blank">View code on Github</a></p>
+
+        <canvas></canvas>
+        <script type="module" src="../js/pentomino/pentomino.js" defer></script>
+    </main>
+
+    <footer class="footer">
+        <img class="portrait" src="../img/site/photo.png" alt="author">
+        <div class="colophon">
+            <i>Jos van Uden</i>
+            <div class="location"><img src="../img/site/location.png" alt="location">Tilburg, The Netherlands</div>
+        </div>
+        <div class="icons">
+            <a href="https://github.com/fwend/Site"><img src="../img/site/GitHub-Mark-Light-64px.png" alt="github"></a>
+            <a href="https://www.linkedin.com/in/fwend/"><img src="../img/site/linkedin.png" alt="linkedin"></a>
+            <a href="https://stackoverflow.com/users/531312/fwend"><img src="../img/site/stackoverflow.png"
+                                                                        alt="stackoverflow"></a>
+        </div>
+    </footer>
+
+</div>
+
+</body>
+</html>

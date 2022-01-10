@@ -245,6 +245,10 @@ blockquote:after {
     color: white;
 }
 
+img.pentomino_tiles {
+    width: 100%;
+}
+
 @media only screen and (max-width: 500px) {
     .main p {
         text-align: left;
