@@ -13,11 +13,11 @@ export default class Dir {
 
     static dirList() {
         /* prefer south and east for the solving algorithm */
-        const list = [];
-        list.push(Object.freeze(new Dir(S, 0, 1, N)));
-        list.push(Object.freeze(new Dir(E, 1, 0, W)));
-        list.push(Object.freeze(new Dir(N, 0, -1, S)));
-        list.push(Object.freeze(new Dir(W, -1, 0, E)));
-        return list;
+        return [
+            Object.freeze(new Dir(S, 0, 1, N)),
+            Object.freeze(new Dir(E, 1, 0, W)),
+            Object.freeze(new Dir(N, 0, -1, S)),
+            Object.freeze(new Dir(W, -1, 0, E)),
+        ];
     }
 }
