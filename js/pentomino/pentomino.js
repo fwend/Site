@@ -14,6 +14,7 @@ const g = canvas.getContext('2d');
 const nRows = 8;
 const nCols = 8;
 const blank = 12;
+const baseThreshold = 250;
 const symbolChars = symbols.split('');
 const States = {
     Start: 'Start',
@@ -22,7 +23,7 @@ const States = {
     Failed: 'Fail',
 }
 
-let grid, placed, animationFrameCounter, state, numSquaresSelected;
+let grid, placed, animationFrameCounter, state, numSquaresSelected, snapshotThreshold;
 
 pointerTracker(canvas, async function (eventType, x, y) {
     switch (eventType) {
@@ -48,6 +49,7 @@ pointerTracker(canvas, async function (eventType, x, y) {
 function init() {
     state = States.Start;
     animationFrameCounter = 0;
+    snapshotThreshold = baseThreshold;
     numSquaresSelected = 0;
     grid = createMatrix(nRows, nCols, -1);
     placed = new Array(symbols.length - 1);
@@ -147,11 +149,12 @@ async function solve(pos, numPlaced) {
 }
 
 async function animate() {
-    if (animationFrameCounter % 250 === 0) {
+    if (animationFrameCounter % snapshotThreshold === 0) {
         draw();
         await sleep(100);
     }
     animationFrameCounter++;
+    snapshotThreshold = Math.ceil(animationFrameCounter / 25000) * baseThreshold;
 }
 
 function drawGrid() {
