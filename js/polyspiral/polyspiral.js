@@ -16,7 +16,8 @@ function drawSpiral(len, angleIncrement) {
         const x2 = x1 + Math.cos(angle) * len;
         const y2 = y1 - Math.sin(angle) * len;
 
-        g.strokeStyle = `hsl(${Math.floor(i * 2.4)}, 100%, 50%)`
+        const hue = Math.floor(i * 2.4);
+        g.strokeStyle = `hsl(${hue}, 100%, 50%)`
         g.beginPath();
         g.moveTo(x1, y1);
         g.lineTo(x2, y2);
