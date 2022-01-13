@@ -1,5 +1,4 @@
 import {range, sum} from "../_shared/math.js";
-import {HSVtoRGB, toRgbString} from "../_shared/color.js";
 
 const canvas = document.querySelector('canvas');
 canvas.width = 660;
@@ -34,8 +33,8 @@ function drawLine(x1, y1, x2, y2) {
 function drawCurve(x1, y1, x2, y2, len, angle, depth) {
 
     if (depth === 0) {
-        const hue = (iter++ / maxIter) % 1;
-        g.strokeStyle = toRgbString(HSVtoRGB(hue, 1, 1));
+        const hue = Math.round((iter++ / maxIter) * 360);
+        g.strokeStyle = `hsl(${hue}, 100%, 50%)`;
         drawLine(Math.round(x1), Math.round(y1), Math.round(x2), Math.round(y2));
     } else {
         len *= scale;

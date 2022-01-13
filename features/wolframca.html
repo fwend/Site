@@ -31,20 +31,27 @@
 
     <main class="main">
         <h1>Wolfram CA</h1>
+
         <p><a href="https://natureofcode.com/book/chapter-7-cellular-automata/" target="_blank">
             A cellular automaton</a> is a system of cells that live on a grid, have a binary state (on or off),
             and a neighborhood.
         </p>
+
         <p>Each row of the grid represents a new generation. The new generation is created by taking a cell and its two
             neighbors and from its pattern, determine the state of the cell directly underneath. Since we have 3 binary
             states, the total number of neighborhood patterns is 8.</p>
+
         <code>000, 001, 010, 011, 100, 101, 110, 111</code>
+
         <p>A <em>rule</em> determines which new state each pattern corresponds to. This rule is an eight bits number.
             Each bit of the number corresponds to one of the listed patterns. The number 90 for instance has the
             following bitpattern:</p>
+
         <code>01011010</code>
+
         <p>If we map the patterns to the corresponding bits of the <em>rule</em>, we know what kind of transformations to
             make.</p>
+
         <table class="wolfram">
             <tr>
                 <td>000</td>
@@ -67,6 +74,7 @@
                 <td>0</td>
             </tr>
         </table>
+
         <p>Using 8 bits, we can create 256 rules. Not all of them will produce an interesting result,
             we're showing only a selection.</p>
 

@@ -1,5 +1,3 @@
-import {HSVtoRGB, toRgbString} from "../_shared/color.js";
-
 const canvas = document.querySelector('canvas');
 canvas.width = 832;
 canvas.height = 500;
@@ -7,7 +5,7 @@ canvas.height = 500;
 const g = canvas.getContext('2d');
 
 const depthLimit = 7;
-const hue = 0.15;
+const hue = 54;
 
 function drawTree(x1, y1, x2, y2, depth) {
 
@@ -31,7 +29,8 @@ function drawTree(x1, y1, x2, y2, depth) {
     g.lineTo(x4, y4);
     g.closePath();
 
-    g.fillStyle = toRgbString(HSVtoRGB(hue + depth * 0.02, 1, 1));
+    const hue1 = Math.floor(hue + depth * 7.2) % 360;
+    g.fillStyle = `hsl(${hue1}, 100%, 50%)`;
     g.fill();
     g.strokeStyle = "lightGray";
     g.stroke();
@@ -42,7 +41,8 @@ function drawTree(x1, y1, x2, y2, depth) {
     g.lineTo(x5, y5);
     g.closePath();
 
-    g.fillStyle = toRgbString(HSVtoRGB(hue + depth * 0.035, 1, 1));
+    const hue2 = Math.floor(hue + depth * 12.6) % 360;
+    g.fillStyle = `hsl(${hue2}, 100%, 50%)`;
     g.fill();
     g.strokeStyle = "lightGray";
     g.stroke();

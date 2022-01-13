@@ -1,5 +1,3 @@
-import {HSVtoRGB, toRgbString} from "../_shared/color.js";
-
 const canvas = document.querySelector("canvas");
 canvas.width = 700;
 canvas.height = 700;
@@ -18,7 +16,7 @@ function drawSpiral(len, angleIncrement) {
         const x2 = x1 + Math.cos(angle) * len;
         const y2 = y1 - Math.sin(angle) * len;
 
-        g.strokeStyle = toRgbString(HSVtoRGB(i / 150, 1.0, 1.0));
+        g.strokeStyle = `hsl(${Math.floor(i * 2.4)}, 100%, 50%)`
         g.beginPath();
         g.moveTo(x1, y1);
         g.lineTo(x2, y2);
