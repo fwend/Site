@@ -5,7 +5,7 @@ const alphabet = "abcdefghijklmnopqrstuvwxyz ";
 const genSize = 100;
 const prob = 0.05;
 
-const startButton = document.querySelector('.startButton');
+const startButton = document.querySelector('.evolution-start');
 
 startButton.addEventListener('click', function () {
     main(createRandomString(target.length, alphabet));
@@ -55,7 +55,7 @@ function presentResult(table, count, result, dist) {
 }
 
 function main(child) {
-    const table = document.querySelector('table.evolution');
+    const table = document.querySelector('.evolution-table');
     while (table.rows.length > 1) {
         table.deleteRow(1);
     }
