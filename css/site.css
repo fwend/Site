@@ -30,7 +30,7 @@ p {
     max-width: 1215px;
     min-width: 300px;
     min-height: 100vh;
-    background: white;
+    background-color: white;
 }
 
 .header {
@@ -108,13 +108,13 @@ a:link, a:visited, a:hover, a:active {
 
 .footer {
     position: relative;
-    color: white;
-    font-size: 1.2rem;
-    min-height: 12rem;
-    background-color: steelblue;
-    margin-top: auto;
     display: flex;
     justify-content: space-between;
+    color: white;
+    background-color: steelblue;
+    font-size: 1.2rem;
+    min-height: 12rem;
+    margin-top: auto;
 }
 
 .footer .portrait {
@@ -141,7 +141,7 @@ a:link, a:visited, a:hover, a:active {
     width: 16px;
     height: 16px;
     margin: 5px 5px 5px 0;
-    vertical-align:middle;
+    vertical-align: middle;
 }
 
 .footer .icons {
