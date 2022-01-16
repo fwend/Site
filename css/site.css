@@ -59,12 +59,12 @@ p {
     margin-right: var(--side-margin);
 }
 
-a:link, a:visited, a:hover, a:active {
+a {
     color: darkorange;
     font-weight: bold;
 }
 
-.header a:link, .header a:visited, .header a:hover, .header a:active, .logo {
+.header a, .logo {
     color: white;
     font-weight: normal;
 }
@@ -225,7 +225,7 @@ blockquote.play {
     grid-template-columns: 8rem 1fr;
 }
 
-blockquote:before {
+blockquote::before {
     font-family: "Times New Roman", serif;
     position: absolute;
     left: -23px;
@@ -235,7 +235,7 @@ blockquote:before {
     color: white;
 }
 
-blockquote:after {
+blockquote::after {
     font-family: "Times New Roman", serif;
     position: absolute;
     right: -23px;
