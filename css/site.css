@@ -11,6 +11,10 @@ html {
     font-size: 62.5%;
 }
 
+strong, h1 {
+    font-weight: 600;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
@@ -61,7 +65,7 @@ p {
 
 a {
     color: darkorange;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .header a, .logo {
