@@ -288,7 +288,7 @@ blockquote::after {
     }
 }
 
-@media only screen and (max-width: 350px) {
+@media screen and (max-width: 350px) {
     /* on very narrow screens move the table somewhat to the left, so we don't have
     to make the font-size smaller because that would affect readability */
     .evolution-table {
@@ -296,7 +296,7 @@ blockquote::after {
     }
 }
 
-@media only screen and (hover: none) {
+@media screen and (hover: none) {
     figure.desktop-only {
         display: none;
     }
