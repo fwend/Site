@@ -39,13 +39,13 @@ p {
 
 .header {
     display: flex;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
     font-size: clamp(1.4rem, 2.5vw, 2rem);
     height: 7rem;
     background-color: steelblue;
     margin-bottom: calc(var(--standard-gap) * 2);
-    padding: 3em;
+    padding: 3em 0;
 }
 
 .header a {
@@ -61,7 +61,11 @@ p {
 }
 
 .header nav {
+    display: flex;
+    justify-content: end;
+    align-items: center;
     margin-right: var(--side-margin);
+    width: 90%;
 }
 
 a {
