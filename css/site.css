@@ -44,7 +44,8 @@ p {
     font-size: clamp(1.4rem, 2.5vw, 2rem);
     height: 7rem;
     background-color: steelblue;
-    margin-bottom: calc(var(--standard-gap) * 2)
+    margin-bottom: calc(var(--standard-gap) * 2);
+    padding: 3em;
 }
 
 .header a {
