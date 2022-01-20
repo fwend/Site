@@ -78,7 +78,7 @@ a {
     font-weight: normal;
 }
 
-.header a.active {
+.header a.current-page {
     border-bottom: 3px solid white;
 }
 
