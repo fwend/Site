@@ -281,7 +281,7 @@ blockquote {
     font-size: 1.5rem;
     background: #f9f9f9;
     border-left: 30px solid #ccc;
-    border-right: 30px solid #ccc;
+    border-right: 2px solid #ccc;
     margin: 1.5em 0;
     padding: 0.5em 20px;
 }
@@ -304,7 +304,7 @@ blockquote::before {
 blockquote::after {
     font-family: "Times New Roman", serif;
     position: absolute;
-    right: -23px;
+    left: -23px;
     bottom: -30px;
     font-size: 4rem;
     content: "\201d";
