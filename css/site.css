@@ -281,7 +281,7 @@ blockquote {
     font-size: 1.5rem;
     background: #f9f9f9;
     border-left: 30px solid #ccc;
-    border-right: 2px solid #ccc;
+    border-right: 4px solid #ccc;
     margin: 1.5em 0;
     padding: 0.5em 20px;
 }
@@ -291,24 +291,22 @@ blockquote.play {
     grid-template-columns: 8rem 1fr;
 }
 
-blockquote::before {
+blockquote::before, blockquote::after {
     font-family: "Times New Roman", serif;
     position: absolute;
     left: -23px;
-    top: -10px;
     font-size: 4rem;
-    content: "\201c";
     color: white;
 }
 
+blockquote::before {
+    top: -10px;
+    content: "\201c";
+}
+
 blockquote::after {
-    font-family: "Times New Roman", serif;
-    position: absolute;
-    left: -23px;
     bottom: -30px;
-    font-size: 4rem;
     content: "\201d";
-    color: white;
 }
 
 .pentomino_tiles_img {
