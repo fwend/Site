@@ -27,6 +27,12 @@ p {
     margin: 2rem 0;
 }
 
+abbr[title] {
+    padding-bottom: 0.1em;
+    border-bottom: 1px dotted black;
+    text-decoration: none;
+}
+
 .container {
     display: flex;
     flex-direction: column;
