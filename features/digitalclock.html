@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap"
+          rel="stylesheet">
     <link rel="stylesheet" href="../css/site.css">
+    <script type="module" src="../js/digitalclock/digitalclock.js" defer></script>
     <style>
         canvas {
             display: block;
@@ -33,18 +35,18 @@
     <main class="main">
         <h1>Digital Clock</h1>
 
-        <p>For me the main challenge for this clock was to make it scalable, so I created leds that were measured in units
+        <p>For me the main challenge for this clock was to make it scalable, so I created leds that were measured in
+            units
             and then put a global multiplier on them. If you change the multiplier, all the units change equally so all
             the proportions stay the same.</p>
 
         <p>By the way if you were to change the viewport of this page, you will see the clock scale along with the page,
-        but that is just the css scaling the canvas (using a clamp command).</p>
+            but that is just the css scaling the canvas (using a clamp command).</p>
 
         <p><a href="https://github.com/fwend/Site/blob/master/js/digitalclock/digitalclock.js"
               target="_blank">View code on Github</a></p>
 
         <canvas></canvas>
-        <script type="module" src="../js/digitalclock/digitalclock.js" defer></script>
     </main>
 
     <footer class="footer">

@@ -7,8 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap"
+          rel="stylesheet">
     <link rel="stylesheet" href="../css/site.css">
+    <script type="module" src="../js/fifteen/fifteen.js" defer></script>
     <style>
         canvas {
             display: block;
@@ -39,7 +41,8 @@
         <p>The first time I created a slider puzzle, I simply shuffled the pieces, not realizing that only half the
             permutations are solvable. People who visited my website must have scratched their head.</p>
 
-        <p>There are two ways to address this:<p>
+        <p>There are two ways to address this:
+        <p>
 
         <p>1) You can shuffle the grid by making a certain number of random legal moves, this way you can never put the
             grid in an unsolvable state, and it has the added benefit that you can nicely animate the shuffle.</p>
@@ -49,16 +52,17 @@
             the position of the blank space, and the number of inversions.</p>
 
         <p>Whenever a tile is preceded by a tile with a higher index value it counts as an inversion. In our case, with
-            the blank space in the home position, the number of inversions must be even for the puzzle to be solvable.</p>
+            the blank space in the home position, the number of inversions must be even for the puzzle to be
+            solvable.</p>
 
         <p>Go ahead and try it, scramble the delicious burger and make it whole again. If you've solved the puzzle,
-            and you have the <strong>JavaScript2RealBurger</strong>&trade; plugin installed, you will be able to actually eat it.</p>
+            and you have the <strong>JavaScript2RealBurger</strong>&trade; plugin installed, you will be able to
+            actually eat it.</p>
 
         <p><a href="https://github.com/fwend/Site/blob/master/js/fifteen/fifteen.js"
               target="_blank">View code on Github</a></p>
 
         <canvas></canvas>
-        <script type="module" src="../js/fifteen/fifteen.js" defer></script>
     </main>
 
     <footer class="footer">

@@ -7,8 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap"
+          rel="stylesheet">
     <link rel="stylesheet" href="../css/site.css">
+    <script src="../js/clock/clock.js" defer></script>
     <style>
         canvas {
             display: block;
@@ -39,19 +41,20 @@
             circle starts at 3 o'clock and not at 12, and runs counterclockwise. Also the origin of the canvas is at the
             upper left corner and not in the center.</p>
 
-        <p>More importantly, the hands cannot just be translated from <em>time of day</em> into degrees, because they must also
+        <p>More importantly, the hands cannot just be translated from <em>time of day</em> into degrees, because they
+            must also
             reflect the progression of the other hands; this is particularly true for the hour hand. It doesn't just
             indicate the current hour, but also the number of minutes that have past since. For instance, at half past
             2, the hour hand should not point at 2, but at halfway between 2 and 3.</p>
 
-        <p>I could have added markings, but I didn't bother because it's more of the same, and I kind of like the minimalistic
-        look. It's a clock for advanced users.</p>
+        <p>I could have added markings, but I didn't bother because it's more of the same, and I kind of like the
+            minimalistic
+            look. It's a clock for advanced users.</p>
 
         <p><a href="https://github.com/fwend/Site/blob/master/js/clock/clock.js"
               target="_blank">View code on Github</a></p>
 
         <canvas></canvas>
-        <script src="../js/clock/clock.js" defer></script>
     </main>
 
     <footer class="footer">
