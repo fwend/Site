@@ -28,13 +28,13 @@ let keyDown = false;
 let fastDown = false;
 
 addEventListener('keydown', function (event) {
-    event.preventDefault();
     if (!keyDown) {
         keyDown = true;
 
         if (scoreboard.isGameOver())
             return;
 
+        event.preventDefault();
         switch (event.key) {
 
             case 'w':
